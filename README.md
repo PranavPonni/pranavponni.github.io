@@ -9,11 +9,11 @@ ________________________________________________________________________________
 ### PROFESSIONAL EXPERIENCES:
 ____________________________________________________________________________________________________________________________
 
-#### Tata Consultancy Services - Japan
+### Tata Consultancy Services - Japan
 
-#### June 2024 - August 2024
+### June 2024 - August 2024
 
-##### Robotics & Digital Engineering - Internship
+#### Robotics & Digital Engineering - Internship
 
 • Utilized Autodesk Fusion 360, a 3D Computer-Aided Design (CAD) software, to create DIY Universal Robot 5e jig designs and fabricated them using a 3D printer.
 
@@ -23,11 +23,11 @@ ________________________________________________________________________________
 
 • Developed code for four distinct machine learning models using Python: Logistic Regression, Random Forests, Gradient Boosting, and Recurrent Neural Networks.
 
-#### Daimler Truck Asia
+### Daimler Truck Asia
 
-#### February 2023 - May 2023
+### February 2023 - May 2023
 
-##### Technical Operations - Internship
+#### Technical Operations - Internship
 
 • Assisted in analyzing robot equipment maintenance, and utility operation data and identifying opportunities for optimization and efficiency enhancement.
 
