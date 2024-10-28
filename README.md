@@ -1,6 +1,6 @@
 # Welcome to my website!
 ____________________________________________________________________________________________________________________________
-[Linkedin](www.linkedin.com/in/pranav-ponnivalavan-619733186)
+[Linkedin](https://www.linkedin.com/in/pranav-ponnivalavan-619733186/)
 [Github](https://github.com/PranavPonni)
 [Instagram](https://www.instagram.com/pranavponnivalavan/)
 
