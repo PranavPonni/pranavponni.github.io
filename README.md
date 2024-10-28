@@ -1,5 +1,8 @@
 # Welcome to my website!
 ____________________________________________________________________________________________________________________________
+[Linkedin](www.linkedin.com/in/pranav-ponnivalavan-619733186)
+[Github](https://github.com/PranavPonni)
+[Instagram](https://www.instagram.com/pranavponnivalavan/)
 
 # Pranav Ponnivalavan here! 
 <img src="https://github.com/user-attachments/assets/cba7807e-3a98-40fd-bf52-4bebf9d9dd06" alt="Pranav Ponnivalavan" width="300"/>
