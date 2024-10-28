@@ -4,7 +4,7 @@
 <img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="400"/>
 
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
-I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning. I am a part of the Handling Team in Shigeki Sugano Laboratory at Waseda University, which is also co-researched by Tetsuya Ogata Laboratory. My research is supervised by Professor Alexander Schmitz and Professor Satoshi Funabashi. Professor Alex co-founded a startup called XELA Robotics, that researches on Tactile Sensors and also is a topic that I focus in my research.
+I have a longstanding interest in robotics and mechanical systems, which I am advancing through dedicated research in robotic manipulation, tactile sensing, in-hand manipulation, and machine learning for robots. Currently, I am a member of the Handling Team within the Shigeki Sugano Laboratory at Waseda University, which collaborates closely with the Tetsuya Ogata Laboratory. My research is supervised by Professor Alexander Schmitz and Professor Satoshi Funabashi. Professor Schmitz, who co-founded XELA Robotics—a startup pioneering developments in tactile sensor technology—also contributes insights central to my research on tactile sensing and its applications in advanced robotic systems.
 
 [Ogata Lab](https://ogata-lab.jp])
 
