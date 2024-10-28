@@ -113,7 +113,8 @@ Presented a paper on AI recycling-based alternative building materials, focusing
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 59 52" src="https://github.com/user-attachments/assets/e29c3f92-eb5c-47ae-97a4-9a84927cd26c">
 ____________________________________________________________________________________________________________________________
-# Profiles 🔖
+
+### **PROFILES 🔖**
 
 [Linkedin](https://www.linkedin.com/in/pranav-ponnivalavan-619733186/)
 [Github](https://github.com/PranavPonni)
