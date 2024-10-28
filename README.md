@@ -1,14 +1,6 @@
 # Welcome to my website! 😄
 ____________________________________________________________________________________________________________________________
 
-# Profiles 🔖
-
-[Linkedin](https://www.linkedin.com/in/pranav-ponnivalavan-619733186/)
-[Github](https://github.com/PranavPonni)
-[Instagram](https://www.instagram.com/pranavponnivalavan/)
-
-____________________________________________________________________________________________________________________________
-
 # Pranav Ponnivalavan here! 👋🏾
 <img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="400"/>
 
@@ -120,5 +112,12 @@ ________________________________________________________________________________
 Presented a paper on AI recycling-based alternative building materials, focusing on eco-bricks made from plastic waste. Demonstrated how plastic PET bottles can be repurposed as eco-bricks using machines that apply pressure presses, showcasing their potential environmental impact on future engineering projects.
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 59 52" src="https://github.com/user-attachments/assets/e29c3f92-eb5c-47ae-97a4-9a84927cd26c">
+____________________________________________________________________________________________________________________________
+
+# Profiles 🔖
+
+[Linkedin](https://www.linkedin.com/in/pranav-ponnivalavan-619733186/)
+[Github](https://github.com/PranavPonni)
+[Instagram](https://www.instagram.com/pranavponnivalavan/)
 
 
