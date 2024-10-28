@@ -18,7 +18,7 @@ ________________________________________________________________________________
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 51 44" src="https://github.com/user-attachments/assets/996b73f2-0db1-49d0-aecd-f65b2e4cefb6">
 
-________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
 ### **PROFESSIONAL EXPERIENCES 👨🏾‍🔬**
 ____________________________________________________________________________________________________________________________
 
@@ -42,7 +42,7 @@ ________________________________________________________________________________
 - Assisted in analyzing robot equipment maintenance and utility operation data, identifying opportunities for optimization and efficiency enhancement.
 - Fostered positive relationships with stakeholders to identify pain points in previous projects and leverage technology solutions and state-of-the-art automation systems.
 - Oversaw the development and implementation of effective facility management projects, energy efficiency initiatives, and practices.
-________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
 ### **PROJECTS 🦾** 
 ____________________________________________________________________________________________________________________________
 
@@ -99,7 +99,7 @@ ________________________________________________________________________________
 **October 2022 - January 2023**
 
 - Designed and built a table from scratch that includes an extendable laptop stand using bolts, bearings, and a rubber band crank mechanism to support adjustable heights from 10-25 cm.
-________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________
 ### **CONFERENCES 📊**
 ____________________________________________________________________________________________________________________________
 
