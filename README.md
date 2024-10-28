@@ -2,12 +2,11 @@
 ____________________________________________________________________________________________________________________________
 
 # Pranav Ponnivalavan here! 
-
 ![DSC03785 2](https://github.com/user-attachments/assets/cba7807e-3a98-40fd-bf52-4bebf9d9dd06)
 
 ## Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University. I have always been interested in robotics and machinery and am looking forward to extending my interest by researching about robot manipulation, tactile sensing, in-hand mainpulation and robot learning.
 
-### Professional Experiences:
+### PROFESSIONAL EXPERIENCES:
 ____________________________________________________________________________________________________________________________
 
 #### Tata Consultancy Services - Japan
@@ -28,7 +27,7 @@ ________________________________________________________________________________
 
 #### February 2023 - May 2023
 
-###### Technical Operations - Internship
+##### Technical Operations - Internship
 
 • Assisted in analyzing robot equipment maintenance, and utility operation data and identifying opportunities for optimization and efficiency enhancement.
 
@@ -36,7 +35,7 @@ ________________________________________________________________________________
 
 • Overseeing the development and implementation of effective facility management projects, energy efficiency initiatives, and practices.
 
-### Projects: 
+### PROJECTS: 
 ____________________________________________________________________________________________________________________________
 
 #### Built own 4 DOF arm & coded & tested specific tasks
