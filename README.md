@@ -1,14 +1,13 @@
 # Welcome to my website! 😄
-____________________________________________________________________________________________________________________________
 
 # Pranav Ponnivalavan here! 👋🏾
 <img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="400"/>
 
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
 I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning.
-____________________________________________________________________________________________________________________________
+
 # Latest Work 🔬
-____________________________________________________________________________________________________________________________
+
 
 [Cup Stack with 4 DOF Arm](https://www.youtube.com/watch?v=Ln-NrnSU2Rs&list=LL&index=12)
 
@@ -18,9 +17,7 @@ ________________________________________________________________________________
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 51 44" src="https://github.com/user-attachments/assets/996b73f2-0db1-49d0-aecd-f65b2e4cefb6">
 
-____________________________________________________________________________________________________________________________
 ### **PROFESSIONAL EXPERIENCES 👨🏾‍🔬**
-____________________________________________________________________________________________________________________________
 
 #### **Tata Consultancy Services - Japan**
 
@@ -42,9 +39,8 @@ ________________________________________________________________________________
 - Assisted in analyzing robot equipment maintenance and utility operation data, identifying opportunities for optimization and efficiency enhancement.
 - Fostered positive relationships with stakeholders to identify pain points in previous projects and leverage technology solutions and state-of-the-art automation systems.
 - Oversaw the development and implementation of effective facility management projects, energy efficiency initiatives, and practices.
-____________________________________________________________________________________________________________________________
+
 ### **PROJECTS 🦾** 
-____________________________________________________________________________________________________________________________
 
 #### Built & coded own 4 DOF arm :- tested specific tasks
 
@@ -99,9 +95,8 @@ ________________________________________________________________________________
 **October 2022 - January 2023**
 
 - Designed and built a table from scratch that includes an extendable laptop stand using bolts, bearings, and a rubber band crank mechanism to support adjustable heights from 10-25 cm.
-____________________________________________________________________________________________________________________________
+
 ### **CONFERENCES 📊**
-____________________________________________________________________________________________________________________________
 
 #### Seminar Presentation - AI in Recycling
 
@@ -112,7 +107,7 @@ ________________________________________________________________________________
 Presented a paper on AI recycling-based alternative building materials, focusing on eco-bricks made from plastic waste. Demonstrated how plastic PET bottles can be repurposed as eco-bricks using machines that apply pressure presses, showcasing their potential environmental impact on future engineering projects.
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 59 52" src="https://github.com/user-attachments/assets/e29c3f92-eb5c-47ae-97a4-9a84927cd26c">
-____________________________________________________________________________________________________________________________
+
 
 ### **PROFILES 🔖**
 
@@ -120,5 +115,5 @@ ________________________________________________________________________________
 [Github](https://github.com/PranavPonni)
 [Instagram](https://www.instagram.com/pranavponnivalavan/)
 
-____________________________________________________________________________________________________________________________
+
 
