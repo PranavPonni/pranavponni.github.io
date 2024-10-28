@@ -18,14 +18,13 @@ ________________________________________________________________________________
 [Automated Sorting using Ultrasonic Sensing](https://www.youtube.com/watch?v=u2e-o8vRAPc&list=LL&index=13)
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 51 44" src="https://github.com/user-attachments/assets/996b73f2-0db1-49d0-aecd-f65b2e4cefb6">
-_________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________
 
 # Pranav Ponnivalavan here! 
 <img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="300"/>
 
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
 I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning.
-
 
 ### **PROFESSIONAL EXPERIENCES**
 ____________________________________________________________________________________________________________________________
