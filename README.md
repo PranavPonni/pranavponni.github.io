@@ -1,4 +1,4 @@
-**# Welcome to my website**
+# Welcome to my website
 ____________________________________________________________________________________________________________________________
 
 ## Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University. I have always been
