@@ -42,7 +42,7 @@ ________________________________________________________________________________
 - Assisted in analyzing robot equipment maintenance and utility operation data, identifying opportunities for optimization and efficiency enhancement.
 - Fostered positive relationships with stakeholders to identify pain points in previous projects and leverage technology solutions and state-of-the-art automation systems.
 - Oversaw the development and implementation of effective facility management projects, energy efficiency initiatives, and practices.
-
+________________________________________________________________________________________________________________________
 ### **PROJECTS 🦾** 
 ____________________________________________________________________________________________________________________________
 
@@ -99,7 +99,7 @@ ________________________________________________________________________________
 **October 2022 - January 2023**
 
 - Designed and built a table from scratch that includes an extendable laptop stand using bolts, bearings, and a rubber band crank mechanism to support adjustable heights from 10-25 cm.
-
+________________________________________________________________________________________________________________________
 ### **CONFERENCES 📊**
 ____________________________________________________________________________________________________________________________
 
@@ -113,7 +113,6 @@ Presented a paper on AI recycling-based alternative building materials, focusing
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 59 52" src="https://github.com/user-attachments/assets/e29c3f92-eb5c-47ae-97a4-9a84927cd26c">
 ____________________________________________________________________________________________________________________________
-
 # Profiles 🔖
 
 [Linkedin](https://www.linkedin.com/in/pranav-ponnivalavan-619733186/)
