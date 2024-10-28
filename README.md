@@ -91,9 +91,8 @@ ________________________________________________________________________________
 - Used a combination of AutoCAD, TinkerCAD, and programming languages such as Arduino, Python, and MATLAB to power the robot.
 - Won the competition by shooting the most number of ping pong balls into the goal.
 
-<video width="640" height="480" controls>
-    <source src="https://github.com/user-attachments/assets/0f5c5fdc-7cab-433c-9780-cc91a86d8137" type="video/mp4">
-</video>
+<source src="https://github.com/user-attachments/assets/0f5c5fdc-7cab-433c-9780-cc91a86d8137" type="video/mp4">
+
 
 #### IR sensor-based line tracing robot
 
