@@ -1,6 +1,6 @@
-# Welcome to my website! 😄
+# Welcome to my website! 
 
-# Pranav Ponnivalavan here! 👋🏾
+# Pranav Ponnivalavan here! 👋🏾😄
 <img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="400"/>
 
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
