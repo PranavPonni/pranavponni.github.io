@@ -1,7 +1,7 @@
-# Welcome to my website! :)
+# Welcome to my website! 😄
 ____________________________________________________________________________________________________________________________
 
-# Profiles
+# Profiles 🔖
 
 [Linkedin](https://www.linkedin.com/in/pranav-ponnivalavan-619733186/)
 [Github](https://github.com/PranavPonni)
@@ -9,7 +9,7 @@ ________________________________________________________________________________
 
 ____________________________________________________________________________________________________________________________
 
-# Latest Work
+# Latest Work 🔬
 
 [Cup Stack with 4 DOF Arm](https://www.youtube.com/watch?v=Ln-NrnSU2Rs&list=LL&index=12)
 
@@ -26,7 +26,7 @@ ________________________________________________________________________________
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
 I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning.
 
-### **PROFESSIONAL EXPERIENCES**
+### **PROFESSIONAL EXPERIENCES 👨🏾‍🔬**
 ____________________________________________________________________________________________________________________________
 
 #### **Tata Consultancy Services - Japan**
@@ -50,7 +50,7 @@ ________________________________________________________________________________
 - Fostered positive relationships with stakeholders to identify pain points in previous projects and leverage technology solutions and state-of-the-art automation systems.
 - Oversaw the development and implementation of effective facility management projects, energy efficiency initiatives, and practices.
 
-### **PROJECTS** 
+### **PROJECTS 🦾** 
 ____________________________________________________________________________________________________________________________
 
 #### Built & coded own 4 DOF arm :- tested specific tasks
@@ -107,7 +107,7 @@ ________________________________________________________________________________
 
 - Designed and built a table from scratch that includes an extendable laptop stand using bolts, bearings, and a rubber band crank mechanism to support adjustable heights from 10-25 cm.
 
-### **CONFERENCES**
+### **CONFERENCES 📊**
 ____________________________________________________________________________________________________________________________
 
 #### Seminar Presentation - AI in Recycling
