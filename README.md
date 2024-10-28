@@ -41,7 +41,7 @@ ________________________________________________________________________________
 ### **PROJECTS** 
 ____________________________________________________________________________________________________________________________
 
-#### Built own 4 DOF arm & coded & tested specific tasks
+#### Built & coded own 4 DOF arm :- tested specific tasks
 
 *Waseda University, Tokyo, Japan*
 
