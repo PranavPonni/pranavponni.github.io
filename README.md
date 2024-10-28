@@ -64,8 +64,7 @@ ________________________________________________________________________________
 
 - Built a remote-controlled, 2-axis robotic arm for sorting processes, under zero budget, for the Mechatronics Advanced course, research, and development for 3 months, tackling issues in torque limitations, grasping control, and load calculations.
 - Received **Best Project Award** from the Faculty of Iwata Laboratory.
-
-[Remote-controlled 2-axis Robot Arm](https://www.youtube.com/watch?v=pT1KjW0tySg&list=LL&index=123)
+- [Remote-controlled 2-axis Robot Arm](https://www.youtube.com/watch?v=pT1KjW0tySg&list=LL&index=123)
 
 #### Ping Pong Shooting Robot
 
