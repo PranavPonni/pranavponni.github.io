@@ -17,7 +17,7 @@ I have always been interested in robotics and machinery and am looking forward t
 
 <img width="400" alt="Screenshot 2024-10-28 at 18 51 44" src="https://github.com/user-attachments/assets/996b73f2-0db1-49d0-aecd-f65b2e4cefb6">
 
-### **PROFESSIONAL EXPERIENCES 👨🏾‍🔬**
+# **PROFESSIONAL EXPERIENCES 👨🏾‍🔬**
 
 #### **Tata Consultancy Services - Japan**
 
@@ -40,7 +40,7 @@ I have always been interested in robotics and machinery and am looking forward t
 - Fostered positive relationships with stakeholders to identify pain points in previous projects and leverage technology solutions and state-of-the-art automation systems.
 - Oversaw the development and implementation of effective facility management projects, energy efficiency initiatives, and practices.
 
-### **PROJECTS 🦾** 
+# **PROJECTS 🦾** 
 
 #### Built & coded own 4 DOF arm :- tested specific tasks
 
@@ -96,7 +96,7 @@ I have always been interested in robotics and machinery and am looking forward t
 
 - Designed and built a table from scratch that includes an extendable laptop stand using bolts, bearings, and a rubber band crank mechanism to support adjustable heights from 10-25 cm.
 
-### **CONFERENCES 📊**
+# **CONFERENCES 📊**
 
 #### Seminar Presentation - AI in Recycling
 
