@@ -26,7 +26,6 @@ ________________________________________________________________________________
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
 I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning.
 
----
 
 ### **PROFESSIONAL EXPERIENCES**
 ____________________________________________________________________________________________________________________________
