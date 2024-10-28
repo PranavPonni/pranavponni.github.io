@@ -1,8 +1,26 @@
 # Welcome to my website!
 ____________________________________________________________________________________________________________________________
+
+# Profiles
+____________________________________________________________________________________________________________________________
+
 [Linkedin](https://www.linkedin.com/in/pranav-ponnivalavan-619733186/)
 [Github](https://github.com/PranavPonni)
 [Instagram](https://www.instagram.com/pranavponnivalavan/)
+
+____________________________________________________________________________________________________________________________
+
+# Latest Work
+____________________________________________________________________________________________________________________________
+
+[Cup Stack with 4 DOF Arm](https://www.youtube.com/watch?v=Ln-NrnSU2Rs&list=LL&index=12)
+
+<img width="400" alt="Screenshot 2024-10-28 at 18 50 27" src="https://github.com/user-attachments/assets/ba76b9df-c2c0-4b62-a38a-e6af7ed151d6">
+
+[Automated Sorting using Ultrasonic Sensing](https://www.youtube.com/watch?v=u2e-o8vRAPc&list=LL&index=13)
+
+<img width="400" alt="Screenshot 2024-10-28 at 18 51 44" src="https://github.com/user-attachments/assets/996b73f2-0db1-49d0-aecd-f65b2e4cefb6">
+____________________________________________________________________________________________________________________________
 
 # Pranav Ponnivalavan here! 
 <img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="300"/>
