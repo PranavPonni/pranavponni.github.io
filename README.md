@@ -5,7 +5,7 @@ ________________________________________________________________________________
 [Instagram](https://www.instagram.com/pranavponnivalavan/)
 
 # Pranav Ponnivalavan here! 
-<img src="https://github.com/user-attachments/assets/cba7807e-3a98-40fd-bf52-4bebf9d9dd06" alt="Pranav Ponnivalavan" width="300"/>
+<img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="300"/>
 
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
 I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning.
