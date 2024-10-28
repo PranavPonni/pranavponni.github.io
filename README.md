@@ -7,8 +7,8 @@ ________________________________________________________________________________
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
 I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning.
 ____________________________________________________________________________________________________________________________
-
 # Latest Work 🔬
+____________________________________________________________________________________________________________________________
 
 [Cup Stack with 4 DOF Arm](https://www.youtube.com/watch?v=Ln-NrnSU2Rs&list=LL&index=12)
 
@@ -120,4 +120,5 @@ ________________________________________________________________________________
 [Github](https://github.com/PranavPonni)
 [Instagram](https://www.instagram.com/pranavponnivalavan/)
 
+____________________________________________________________________________________________________________________________
 
