@@ -20,7 +20,7 @@ ________________________________________________________________________________
 <img width="400" alt="Screenshot 2024-10-28 at 18 51 44" src="https://github.com/user-attachments/assets/996b73f2-0db1-49d0-aecd-f65b2e4cefb6">
 ________________________________________________________________________________________________________________________
 
-# Pranav Ponnivalavan here! 
+# Pranav Ponnivalavan here! 👋🏾
 <img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="400"/>
 
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
