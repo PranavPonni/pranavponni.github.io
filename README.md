@@ -21,7 +21,7 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 
 # Pranav Ponnivalavan here! 
-<img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="300"/>
+<img src="https://github.com/user-attachments/assets/43864398-ce2e-40a4-bc3f-542193a362f8" alt="Pranav Ponnivalavan" width="400"/>
 
 ### *Fourth-year undergraduate majoring in Mechanical Engineering at Waseda University.*  
 I have always been interested in robotics and machinery and am looking forward to extending my interest by researching robot manipulation, tactile sensing, in-hand manipulation, and robot learning.
@@ -49,8 +49,6 @@ ________________________________________________________________________________
 - Assisted in analyzing robot equipment maintenance and utility operation data, identifying opportunities for optimization and efficiency enhancement.
 - Fostered positive relationships with stakeholders to identify pain points in previous projects and leverage technology solutions and state-of-the-art automation systems.
 - Oversaw the development and implementation of effective facility management projects, energy efficiency initiatives, and practices.
-
----
 
 ### **PROJECTS** 
 ____________________________________________________________________________________________________________________________
@@ -93,6 +91,8 @@ ________________________________________________________________________________
 - Used a combination of AutoCAD, TinkerCAD, and programming languages such as Arduino, Python, and MATLAB to power the robot.
 - Won the competition by shooting the most number of ping pong balls into the goal.
 
+https://github.com/user-attachments/assets/0f5c5fdc-7cab-433c-9780-cc91a86d8137
+
 #### IR sensor-based line tracing robot
 
 *Waseda University, Tokyo, Japan*
@@ -109,8 +109,6 @@ ________________________________________________________________________________
 
 - Designed and built a table from scratch that includes an extendable laptop stand using bolts, bearings, and a rubber band crank mechanism to support adjustable heights from 10-25 cm.
 
----
-
 ### **CONFERENCES**
 ____________________________________________________________________________________________________________________________
 
@@ -121,3 +119,7 @@ ________________________________________________________________________________
 **May 2019**
 
 Presented a paper on AI recycling-based alternative building materials, focusing on eco-bricks made from plastic waste. Demonstrated how plastic PET bottles can be repurposed as eco-bricks using machines that apply pressure presses, showcasing their potential environmental impact on future engineering projects.
+
+<img width="400" alt="Screenshot 2024-10-28 at 18 59 52" src="https://github.com/user-attachments/assets/e29c3f92-eb5c-47ae-97a4-9a84927cd26c">
+
+
