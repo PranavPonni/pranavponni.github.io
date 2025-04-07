@@ -60,6 +60,8 @@ I have a longstanding interest in robotics and mechanical systems, which I am ad
 
 **Youtube Links:**
 
+- [Motion Teaching with a Remote Controlled 5 DOF Robot Arm](https://www.youtube.com/watch?v=avQ0WtzYIRw&list=LL&index=8)
+- [Using 5 DOF arm to pour different materials from one cup to another](https://www.youtube.com/watch?v=obIE7zeA9dM&list=LL&index=66)
 - [4 DOF Robot Arm Test](https://www.youtube.com/watch?v=kfex-0hAYPs&list=LL&index=10)
 - [Cup Stacking with 4 DOF Arm](https://www.youtube.com/watch?v=Ln-NrnSU2Rs&list=LL&index=12)
 - [Automated Sorting using Ultrasonic Sensing - 4 DOF Arm](https://www.youtube.com/watch?v=u2e-o8vRAPc&list=LL&index=14)
