@@ -51,8 +51,8 @@ params:
     profileMode:
           enabled: true
           title: Pranav Ponnivalavan
-          subtitle: "Hello, I’m Pranav — a 4th-year Mechanical Engineering student at Waseda University researching in-hand dexterous manipulation through body schema and cognitive touch in Shigeki Sugano and Tetsuya Ogata Labs."
-          imageUrl: "picture.jpeg"
+          subtitle: "Hello, I’m Pranav — a 4th-year Mechanical Engineering undergraduate student at Waseda University researching in-hand dexterous manipulation through body schema and cognitive touch in Shigeki Sugano and Tetsuya Ogata Labs."
+          imageUrl: "picture.jpg"
           imageWidth: 160
           imageHeight: 160
           buttons:
