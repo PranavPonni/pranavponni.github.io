@@ -1,5 +1,5 @@
 baseURL: "https://pranavponni.github.io/" 
-title: Pranav Ponnivalavan's Website
+title: Pranav Ponnivalavan
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -12,21 +12,18 @@ taxonomies:
 
 menu:
     main:
-        - name: Books
-          url: books/
-          weight: 5 
-        - name: Papers
-          url: papers/
+        - name: Research
+          url: research/
+          weight: 5
+        - name: Work
+          url: work/
           weight: 2
-        - name: Courses
-          url: courses/
+        - name: CV
+          url: cv/
           weight: 3
-        - name: Data
-          url: data/
-          weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
+        - name: Projects
+          url: projects/
+          weight: 4
 
 params:
     description: "This website hosts Pranav Ponnivalavan's research, CV, work experience, projects, and contact information."
@@ -43,7 +40,7 @@ params:
     ShowBreadCrumbs: false
     ShowCodeCopyButtons: true
     ShowAllPagesInArchive: false
-    MainSections: ["books","courses","papers","data"]
+    MainSections: ["research","work","cv","projects"]
     ShowToc: false
     disableScrollToTop: true
     TocOpen: true
@@ -54,7 +51,8 @@ params:
     profileMode:
           enabled: true
           title: Pranav Ponnivalavan
-          subtitle: "Undergraduate Student at Waseda University, Tokyo, Japan"
+          subtitle: "Hello, I’m Pranav — a 4th-year Mechanical Engineering student at Waseda University researching in-hand dexterous manipulation through body schema and cognitive touch in Shigeki Sugano and Tetsuya Ogata Labs."
+          imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
           buttons:
@@ -87,7 +85,7 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Moritz-Maria von Igelfeld"
+      text: "pranavponnivalavan"
       icon: favicon.ico
       iconHeight: 18
 
