@@ -23,8 +23,18 @@ disableAnchoredHeadings: false
 ### APL Global School  
 **Jun 2011 – Mar 2021 • Chennai, India**
 
-- Cambridge Assessment International Education (CAIE) – AS & A Levels  
+- G3 to 12
+- Cambridge Assessment International Education (CAIE) – AS & A Levels [April 2019 - March 2021]
 - Subjects: English, Mathematics, Physics, Chemistry, Computer Science  
+- Cambridge Assessment International Education (CAIE) – GCSE [April 2017 - March 2019]
+- Subjects: English, Mathematics, Physics, Chemistry, Biology, Computer Science, Environmental Management, Hindi
+
+---
+
+### K. International School  
+**Sep 2007 – Apr 2011 • Tokyo, Japan**
+
+- K1 to G2
 
 ---
 

@@ -39,9 +39,7 @@ In humans, **sensory attenuation** reduces the perception of self-generated stim
 
 The robot learns the following mapping function:
 
-$
-> \hat{T}_{t+1} = f(J_t,\ J_{t+1},\ T_t)
-$
+$\hat{T}_{t+1} = f(J_t,\ J_{t+1},\ T_t)$
 
 Where:
 
@@ -53,9 +51,7 @@ Where:
 
 The model is trained to minimize the following loss function:
 
-$
-> L = \|T_{t+1} - \hat{T}_{t+1}\|^2 
-$
+$L = \|T_{t+1} - \hat{T}_{t+1}\|^2$
 
 This loss encourages the system to accurately predict tactile outcomes based on its motion, enabling it to **distinguish between self-generated and externally generated touch**.
 
