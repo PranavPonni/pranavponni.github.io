@@ -39,9 +39,9 @@ In humans, **sensory attenuation** reduces the perception of self-generated stim
 
 The robot learns the following mapping function:
 
-$$ 
-> $\hat{T}_{t+1} = f(J_t,\ J_{t+1},\ T_t)$ 
-$$
+$
+> \hat{T}_{t+1} = f(J_t,\ J_{t+1},\ T_t)
+$
 
 Where:
 
@@ -53,9 +53,9 @@ Where:
 
 The model is trained to minimize the following loss function:
 
-$$ 
+$
 > L = \|T_{t+1} - \hat{T}_{t+1}\|^2 
-$$
+$
 
 This loss encourages the system to accurately predict tactile outcomes based on its motion, enabling it to **distinguish between self-generated and externally generated touch**.
 
@@ -66,13 +66,13 @@ This loss encourages the system to accurately predict tactile outcomes based on 
 Below are a few selected visuals from the **HASA** project demonstrating the hardware setup, data collection process, and tactile signal responses.
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-  <img src="/view.png" alt="Allegro Hand and Tactile Sensor Setup" width="48%">
+  <img src="/view.png" alt="Allegro Hand and Tactile Sensor Setup" width="100%">
 </div>
 
 > *Fig 1*: Allegro Hand and Tactile Sensor Setup
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-  <img src="/diff.png" alt="Difficulty of Task" width="58%" height="78%">
+  <img src="/diff.png" alt="Difficulty of Task" width="100%">
 </div>
 
 > *Fig 2*: Difficulty of Task
