@@ -1,5 +1,4 @@
 ---
-
 title: "TaSA | Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation"
 tags: ["TaSA", "In-hand manipulation", "Robotic Hands", "Cognitive Robotics", "Tactile Sensing"]
 author: ["Pranav Ponnivalavan"]
