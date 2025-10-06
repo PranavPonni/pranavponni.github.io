@@ -106,28 +106,28 @@ On held-out episodes, the predicted self-touch traces the raw tactile closely du
 
 ### Task Success (Phase-2)
 
+Here you go—same results, distilled to just the final totals.
+
 **Paper-clip fixing (10 trials per condition)**
 
-|                         | **RT only**     | **RT+Self**      |
-| ----------------------- | --------------- | ---------------- |
-| Back (big/small)        | 8/10, 7/10      | **10/10, 10/10** |
-| Middle test (big/small) | 8/10, 8/10      | **10/10, 10/10** |
-| Front (big/small)       | 6/10, 5/10      | **9/10, 8/10**   |
-| **Total**               | **42/60 = 70%** | **57/60 = 95%**  |
+| Method  | Success rate |
+| ------- | -----------: |
+| RT only |      **70%** |
+| RT+Self |      **95%** |
 
 **Coin insertion (10 trials per condition)**
 
-| Slot →      | **Left**                         | **Middle (test)**                | **Right**                         | **Total**       |
-| ----------- | -------------------------------- | -------------------------------- | --------------------------------- | --------------- |
-| **RT only** | 1¥: 6/10, 100¥: 7/10, 500¥: 7/10 | 1¥: 7/10, 100¥: 7/10, 500¥: 7/10 | 1¥: 7/10, 100¥: 7/10, 500¥: 6/10  | **61/90 = 68%** |
-| **RT+Self** | 1¥: 9/10, 100¥: 9/10, 500¥: 7/10 | **1¥/100¥/500¥: 10/10**          | 1¥: 10/10, 100¥: 9/10, 500¥: 9/10 | **83/90 = 92%** |
+| Method  | Success rate |
+| ------- | -----------: |
+| RT only |      **68%** |
+| RT+Self |      **92%** |
 
 **Pencil-lead insertion (10 trials per condition; “t” = test angles)**
 
-| Angle →                              |      −20° |  −10° (t) |        0° |  +10° (t) |      +20° |         **Total** |
-| ------------------------------------ | --------: | --------: | --------: | --------: | --------: | ----------------: |
-| **RT only** (0.7/0.9/1.3/1.4/2.0 mm) | 0/1/3/3/3 | 1/2/3/3/4 | 2/2/4/4/5 | 1/3/3/3/5 | 1/2/2/2/4 |  **66/250 = 26%** |
-| **RT+Self** (0.7/0.9/1.3/1.4/2.0 mm) | 3/4/6/6/7 | 5/6/7/7/8 | 5/5/8/8/9 | 4/4/6/7/8 | 4/3/5/5/6 | **146/250 = 58%** |
+| Method  | Success rate |
+| ------- | -----------: |
+| RT only |      **26%** |
+| RT+Self |      **58%** |
 
 **Takeaway:** Using **self-touch alongside total tactile** improves motion clarity and helps the controller disambiguate finger contact from object contact—crucial for precise in-hand insertion and generalization to unseen conditions (e.g., middle coin slot, intermediate angles).
 
