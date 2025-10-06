@@ -1,65 +1,130 @@
 ---
-title: "HASA | Hand Sensory Attenuation Research" 
-tags: ["In-hand manipulation", "Robotic Hands", "Cognitive Robotics", "Tactile Sensing"]
+
+title: "TaSA | Two‑Phased Deep Predictive Learning of Tactile Sensory Attenuation"
+tags: ["TaSA", "In-hand manipulation", "Robotic Hands", "Cognitive Robotics", "Tactile Sensing"]
 author: ["Pranav Ponnivalavan"]
-description: "A research thesis on distinguishing self and external touch through tactile sensing for robotic in-hand manipulation."
-summary: "HASA explores how tactile sensors can help robotic hands differentiate between self-touch and external object contact to improve dexterous in-hand manipulation."
+description: "TaSA is a two‑phase deep predictive learning framework that separates self‑touch from external contact to improve dexterous in‑hand manipulation."
+summary: "Phase 1 learns to predict self‑touch from joint motion; Phase 2 uses self‑touch alongside total tactile to generate actions and isolate external contact during manipulation."
 cover:
-    image: "/hasalogo.jpg"
-    alt: "Hand Sensory Attenuation"
-    relative: true
+image: "/hasalogo.jpg"
+alt: "Tactile Sensory Attenuation"
+relative: true
 showToc: true
 disableAnchoredHeadings: false
+------------------------------
+
+## Overview
+
+**TaSA** (Two‑Phased deep learning of **Ta**ctile **S**ensory **A**ttenuation) operationalizes the neuroscience notion of sensory attenuation in robotic hands. The key idea is to **predict the tactile signal caused by the robot itself (self‑touch)** and subtract it from the **total tactile** reading at run time to reveal **external touch** that matters for manipulation.
+
+Hardware: **Allegro Hand** with **XELA uSkin** fingertips (30 tri‑axial taxels per finger). Task focus: **mechanical pencil lead insertion**—a contact‑rich, low‑signal task where self‑ and object‑contacts often overlap.
 
 ---
 
-## Description
+## Why TaSA?
 
-**HASA** (Hand Sensory Attenuation) is an undergraduate thesis project that investigates how robotic hands equipped with tactile sensors can distinguish between *self-generated touch* and *external touch*. This ability, inspired by human somatosensory processes such as sensory attenuation, enables more dexterous and reliable in-hand manipulation.
-
-The project leverages the Allegro Hand paired with XELA tactile sensors and proposes a two-phase learning strategy:
-- A **self-touch learning phase** to model the robot’s own tactile feedback
-- A **motion generation phase** to predict future tactile outcomes based on actions
-
-This approach draws from concepts in cognitive robotics, such as the **free-energy principle**, to optimize tactile predictions and generate robust manipulation behaviors. The system is evaluated through experiments involving self-grasping and object interaction, with comparisons to baseline models lacking self-touch understanding.
+Dense finger motions create frequent **finger–finger** and **finger–palm** contacts. If a policy treats *all* contact as equally important, it may overfit to self‑touch and lose sensitivity to the object. TaSA explicitly models **self vs. external** contact to make the policy **contact‑aware** and reduce false positives from self collisions.
 
 ---
 
-## Short Description
+## Method: Two‑Phase Learning
 
-> "This project introduces an elegant framework for enabling robots to distinguish self from environment – a crucial step toward embodied intelligence." 
+### Phase 1 — Self‑Touch Learning (Prediction)
+
+We learn a predictor of future **self‑touch** from joint motion (and optionally current tactile):
+
+$$\hat{S}*{t+1} = f*\theta\big(J_t, J_{t+1}, T_t\big)$$
+
+with loss
+
+$$\mathcal{L}*{\text{self}} = |S*{t+1} - \hat{S}_{t+1}|_2^2.$$
+
+Here, (S) denotes the *self‑touch* component of tactile sensed during isolated self‑motion data (open/close and rubbing without an object). The dataset includes **8 joint positions** and **60 tri‑axial tactile points** collected over **500+ self‑touch episodes**.
+
+**External tactile** is then defined online as:
+
+$$E_t = T_t - \hat{S}_t,$$
+
+where (T_t) is the **total tactile** at time (t).
+
+> Intuition: if the model can predict what self‑contact should feel like given the hand’s motion, the remainder is likely due to the **object** or environment.
+
+### Phase 2 — Motion Learning (Generation)
+
+A recurrent policy (e.g., LSTM‑based **SAT‑RNN‑POS**) consumes **[total tactile (T), predicted self‑touch (\hat{S})]** (and joint states) to predict **future actions** and **future tactile**:
+
+$$J_{t+1},\ \hat{T}*{t+1} = g*\phi\big(J_{t-k:t},\ T_{t-k:t},\ \hat{S}_{t-k:t}\big).$$
+
+We jointly minimize:
+
+$$\mathcal{L}*{\text{motion}} = \lambda_T|T*{t+1}-\hat{T}*{t+1}|*1 + \lambda_J|J*{t+1}-\hat{J}*{t+1}|_1,$$
+
+and (optionally) **backpropagate through the self‑touch module** so the policy learns when and how self‑contact will arise during planned motion.
+
+**Architectural variants** (for ablations):
+
+* **T‑RNN:** total tactile only ((T)).
+* **S‑RNN:** self‑touch only ((\hat{S})).
+* **ST‑RNN / SAT‑RNN:** both ((T, \hat{S})) with attenuation logic.
 
 ---
 
-#### Self-Touch and Sensory Attenuation
+## Mathematical Summary
 
-In humans, **sensory attenuation** reduces the perception of self-generated stimuli — this mechanism helps differentiate between one’s own actions and external influences. By modeling this concept in robotic systems, we enable the robot to predict and downweight expected tactile feedback resulting from its own movements.
+**Signals**
 
-#### Mathematical Model
+* Total tactile: (T_t)
+* Predicted self‑touch: (\hat{S}_t)
+* External tactile (used for decision‑making): (E_t = T_t - \hat{S}_t)
 
-The robot learns the following mapping function:
+**Training objectives**
 
-$\hat{T}_{t+1} = f(J_t,\ J_{t+1},\ T_t)$
-
-Where:
-
-- $\hat{T}_{t+1}$: predicted tactile state at time step $t+1$  
-- $J_t,\ J_{t+1}$: current and future joint states  
-- $T_t$: current tactile sensor input  
+* Self‑touch prediction: (\min_\theta \mathbb{E},|S_{t+1}-\hat{S}_{t+1}|_2^2)
+* Motion generation: (\min_\phi \mathbb{E},[\lambda_T|T_{t+1}-\hat{T}*{t+1}|*1 + \lambda_J|J*{t+1}-\hat{J}*{t+1}|_1])
 
 ---
 
-The model is trained to minimize the following loss function:
+## Experiment
 
-$L = \|T_{t+1} - \hat{T}_{t+1}\|^2$
+**Task:** Insert pencil lead into a mechanical pencil.
+**Challenge:** Subtle normal/shear forces; **self** and **object** contacts occur simultaneously.
+**Setup:** Allegro Hand (curved fingertips) + uSkin, side‑view “pitching” approach.
 
-This loss encourages the system to accurately predict tactile outcomes based on its motion, enabling it to **distinguish between self-generated and externally generated touch**.
+**Data collection:**
+
+* Self‑touch set: hand open/close and finger rubbing (no object) to learn (\hat{S}).
+* Task set: insertion trials using the learned (\hat{S}) online to form (E=T-\hat{S}).
 
 ---
 
-## Gallery
+## Results (Representative)
 
-Below are a few selected visuals from the **HASA** project demonstrating the hardware setup, data collection process, and tactile signal responses.
+* **Motion success rates (per‑condition average):**
+
+  * **ST‑RNN (Self + Total tactile): ~52%**
+  * **S‑RNN (Self‑only): ~38%**
+  * **T‑RNN (Total‑only): ~20%**
+* **Self‑touch prediction accuracy by axis:**
+
+  * **Y‑axis:** high accuracy (external error ≈ 10–20)
+  * **Z‑axis:** moderate (error up to ~150)
+  * **X‑axis:** weaker (error often > 200)
+
+**Takeaway:** Feeding **self‑touch alongside total tactile** improves motion clarity and helps the controller disambiguate finger contact from true object contact—crucial for precise in‑hand insertion.
+
+---
+
+## Improvements & Future Work
+
+* Improve **axis‑dependent self‑touch prediction** (e.g., axis‑wise losses or attention).
+* Evaluate **generalization** to other precision tasks: bolt screwing, peg‑in‑hole, small‑object rotation/translation.
+* Test **object variability** (lead diameters/materials) and **multi‑finger** or **bimanual** self‑contact.
+
+---
+
+## Media
+
+### Gallery
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
   <img src="/view.png" alt="Allegro Hand and Tactile Sensor Setup" width="100%">
@@ -68,35 +133,32 @@ Below are a few selected visuals from the **HASA** project demonstrating the har
 > *Fig 1*: Allegro Hand and Tactile Sensor Setup
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-  <img src="/diff.png" alt="Difficulty of Task" width="100%">
+  <img src="/diff.png" alt="Task Difficulty" width="100%">
 </div>
 
-> *Fig 2*: Difficulty of Task
+> *Fig 2*: Task Difficulty (self‑ vs total‑contact overlap)
 
----
-
-## Demonstration Video
-
-Here is a demonstration of the **HASA** system performing mechanical pencil lead insertion task:
+### Demonstration Video
 
 <video controls width="100%" style="border-radius: 12px;">
   <source src="/episode_video-3.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-> *Video 1*: Self vs external touch prediction during in-hand manipulation.
+> *Video 1*: Online separation of self vs. external tactile during insertion.
 
 ---
 
 ## Citation
 
-Pranav Ponnivalavan. 2025. *Hand Sensory Attenuation (HASA): Differentiating Self and External Touch for Robotic In-hand Manipulation*. Waseda University, Tokyo, Japan.
+Pranav Ponnivalavan. 2025. *TaSA: Two‑Phased Deep Predictive Learning of Tactile Sensory Attenuation for Improving In‑Grasp Manipulation*. Waseda University, Tokyo, Japan.
 
-<!-- ```bibtex
-@bachelorsthesis{Ponnivalavan2025,
+<!--
+@bachelorsthesis{Ponnivalavan2025-TaSA,
   author       = {Pranav Ponnivalavan},
-  title        = {Hand Sensory Attenuation (HASA): Differentiating Self and External Touch for Robotic In-hand Manipulation},
+  title        = {TaSA: Two‑Phased Deep Predictive Learning of Tactile Sensory Attenuation for Improving In‑Grasp Manipulation},
   school       = {Waseda University},
   year         = {2025},
-  address      = {Tokyo, Japan},
-} -->
+  address      = {Tokyo, Japan}
+}
+-->
