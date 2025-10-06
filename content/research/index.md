@@ -73,20 +73,20 @@ A **frozen** copy of the Phase-1 FCN provides **future self-touch** from the mod
 
 ### Task Distributions
 
-**Table III — Paper-clip fixing**
+**Paper-clip fixing**
 
 | Clip Size | Front |  Middle  |  Back |
 | --------: | :---: | :------: | :---: |
 |     Small | Train | **Test** | Train |
 |       Big | Train | **Test** | Train |
 
-**Table IV — Coin insertion**
+**Coin insertion**
 
 | Coin Type                 |  Left |  Middle  | Right |
 | ------------------------- | :---: | :------: | :---: |
 | 1 yen / 100 yen / 500 yen | Train | **Test** | Train |
 
-**Table V — Pencil-lead insertion**
+**Pencil-lead insertion**
 
 | Diameter (mm) → / Angle ↓ |   −20°   |   −10°   |    0°    |   +10°   |   +20°   |
 | ------------------------- | :------: | :------: | :------: | :------: | :------: |
