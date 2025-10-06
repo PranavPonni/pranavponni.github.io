@@ -15,7 +15,7 @@ disableAnchoredHeadings: false
 
 ## Overview
 
-**TaSA** (Two-Phased deep learning of **Ta**ctile **S**ensory **A**ttenuation) operationalizes the neuroscience notion of sensory attenuation in robotic hands. The key idea is to **predict the tactile signal caused by the robot itself (self-touch)** and subtract it from the **total tactile** reading at run time to reveal **external touch** that matters for manipulation.
+**TaSA** (Two-Phased deep learning of **Ta**ctile **S**ensory **A**ttenuation) operationalizes the neuroscience notion of sensory attenuation in robotic hands. The key idea is to **predict the tactile signal caused by the robot itself (self-touch)** and **subtract it from** the **total tactile** reading at run time to reveal **external touch** that matters for manipulation.
 
 Hardware: **Allegro Hand** with **XELA uSkin** fingertips (30 tri-axial taxels per finger; ~6.5 mm spacing). Task focus: **mechanical pencil-lead insertion**, **coin insertion**, and **paper-clip fixing**—contact-rich, low-signal tasks where self- and object-contacts often overlap.
 
@@ -29,47 +29,52 @@ Dense finger motions create frequent **finger–finger** and **finger–palm** c
 
 ## Method: Two-Phase Learning
 
+> **Math rendering:** Inline math uses `\( … \)` and display equations use `$$ … $$`.
+
 ### Notation
 
 * Total tactile at time (t): (T_t)
-* Predicted self-touch: (\hat S_t)
-* External tactile (decision signal): (E_t = T_t - \hat S_t)
+* Predicted self-touch: (\hat{S}_t)
+* External tactile (decision signal): (E_t = T_t - \hat{S}_t)
 * Joint positions: (q_t \in \mathbb{R}^8) (index & thumb; 4 DOF each)
 
 ### Phase 1 — Self-Touch Learning (Prediction)
 
 We learn a predictor of (future) **self-touch** from joint motion (and commands):
-[
-\hat S_{t+1} = f_\theta!\big(q_t,; q^{\mathrm{cmd}}*t\big),
+$$
+\hat{S}*{t+1} = f*{\theta}!\big(q_t,; q^{\mathrm{cmd}}*t\big),
 \qquad
-\mathcal{L}*{\text{self}}=|S_{t+1}-\hat S_{t+1}|_2^2.
+\mathcal{L}*{\text{self}}=\big|S_{t+1}-\hat{S}_{t+1}\big|_2^2.
+$$
+
+During Phase-1 data collection, motions contain only **self-contact** (open/close, rubbing; no objects). Each fingertip has **30 taxels × 3 axes = 90** channels; using **index + thumb → 180-D tactile**. An FCN (hidden dim 128; GELU; dropout 0.2) maps joint inputs to (\hat{S}).
+
+**Online external tactile** is computed as
+[
+E_t = T_t - \hat{S}_t.
 ]
 
-During Phase-1 data collection, motions contain only **self-contact** (open/close, rubbing; no objects). Each fingertip has **30 taxels × 3 axes = 90** channels; using **index + thumb → 180-D tactile**. An FCN (hidden dim 128; GELU; dropout 0.2) maps joint inputs to (\hat S).
-
-**Online external tactile** is computed as (E_t = T_t - \hat S_t).
-
-> Intuition: if the model predicts what self-contact *should* feel like given the hand’s motion, the remainder reflects **object** contact.
+> **Intuition:** if the model predicts what self-contact *should* feel like given the hand’s motion, the remainder reflects **object** contact.
 
 ### Phase 2 — Motion Learning (Generation)
 
 A recurrent policy (LSTM-based **ST-RNN / SAT-RNN**) consumes **raw tactile** and **predicted self-touch** (plus joints) to predict **future joints/commands** and **future tactile**:
-[
-\mathbf{x}*t=[,q_t,; \hat S_t,; T_t,],\qquad
-\hat q*{t+1},; \hat q^{\mathrm{cmd}}*{t+1},; \hat T*{t+1}=g_\phi(\mathbf{x}_{t-k:t}).
-]
+$$
+\mathbf{x}*t=\big[,q_t,; \hat{S}*t,; T_t,\big],\qquad
+\hat{q}*{t+1},; \hat{q}^{\mathrm{cmd}}*{t+1},; \hat{T}*{t+1}=g*{\phi}!\big(\mathbf{x}_{t-k:t}\big).
+$$
 
 A **frozen** copy of the Phase-1 FCN supplies **future** self-touch from predicted postures:
-[
-\hat S_{t+1}=f_\theta!\big(\hat q_{t+1},; \hat q^{\mathrm{cmd}}_{t}\big),
-]
+$$
+\hat{S}*{t+1}=f*{\theta}!\big(\hat{q}*{t+1},; \hat{q}^{\mathrm{cmd}}*{t}\big),
+$$
 maintaining a clean separation of self vs. external contact during rollouts.
 
 #### Architectural Variants (ablations)
 
 * **T-RNN:** tactile only (T)
-* **S-RNN:** self-touch only (\hat S)
-* **ST-RNN / SAT-RNN:** both ((T,\hat S))
+* **S-RNN:** self-touch only (\hat{S})
+* **ST-RNN / SAT-RNN:** both ((T,\hat{S}))
 
 ---
 
@@ -118,7 +123,7 @@ maintaining a clean separation of self vs. external contact during rollouts.
 
 ### Self-Touch Prediction (Phase-1)
 
-Across held-out episodes, (\hat S) closely tracks raw tactile during sustained finger–finger contact; the **error** spikes at contact onsets/offsets, acting as an event cue. Correlations on self-contact segments are high (thumb ≈ **0.96**, index ≈ **0.98**).
+Across held-out episodes, (\hat{S}) closely tracks raw tactile during sustained finger–finger contact; the **error** spikes at contact onsets/offsets, acting as an event cue. Correlations on self-contact segments are high (thumb ≈ **0.96**, index ≈ **0.98**).
 
 ### Task Success (Phase-2)
 
@@ -157,7 +162,7 @@ Across held-out episodes, (\hat S) closely tracks raw tactile during sustained f
 * **Hidden:** 128 (GELU; dropout 0.2)
 * **Encoder:** Linear(16→64), GELU, Dropout(0.2); Linear(64→128), GELU
 * **Decoder:** Dropout(0.2); Linear(128→64), GELU; Linear(64→188), GELU
-* **Output heads:** (\hat s^{\text{idx}}_t) (90), (\hat s^{\text{thb}}_t) (90), (\hat q_t) (8)
+* **Output heads:** (\hat{s}^{\text{idx}}_t) (90), (\hat{s}^{\text{thb}}_t) (90), (\hat{q}_t) (8)
 
 ### Motion Learning RNN (Phase-2) — *matches Table II*
 
@@ -167,7 +172,7 @@ Across held-out episodes, (\hat S) closely tracks raw tactile during sustained f
   * **ST-RNN (RT + Self + (q_t))**: 180 + 180 + 8 = **368**
   * **T-RNN (RT + (q_t))**: 180 + 8 = **188**
 * **Decoder:** Linear(100→128), ReLU; Linear(128→196)
-* **Outputs (size):** ((\hat T^{\text{idx}}, \hat T^{\text{thb}})=(90,90)), (\hat q_{t+1}=8), (\hat q^{\mathrm{cmd}}_{t+1}=8) ⇒ **196**
+* **Outputs (size):** ((\hat{T}^{\text{idx}}, \hat{T}^{\text{thb}})=(90,90)), (\hat{q}*{t+1}=8), (\hat{q}^{\mathrm{cmd}}*{t+1}=8) ⇒ **196**
 
 ---
 
