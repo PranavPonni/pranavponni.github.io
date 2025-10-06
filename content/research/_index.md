@@ -1,4 +1,4 @@
 ---
 title: "Current Research"
-description: "HASA"
+description: "TaSA"
 ---
