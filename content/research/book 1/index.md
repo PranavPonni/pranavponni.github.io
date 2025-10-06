@@ -2,8 +2,8 @@
 title: "TaSA | Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation"
 tags: ["TaSA", "In-hand manipulation", "Robotic Hands", "Cognitive Robotics", "Tactile Sensing"]
 author: ["Pranav Ponnivalavan"]
-description: "TaSA is a two-phase deep predictive learning framework that separates self-touch from external contact to improve dexterous in-hand manipulation."
-summary: "Phase 1 learns to predict self-touch from joint motion; Phase 2 uses self-touch alongside total tactile to generate actions and isolate external contact during manipulation."
+description: "Phase 1 learns to predict self-touch from joint motion; Phase 2 uses self-touch alongside total tactile to generate actions and isolate external contact during manipulation."
+summary: "TaSA is a two-phase deep predictive learning framework that separates self-touch from external contact to improve dexterous in-hand manipulation."
 cover:
 image: "/hasalogo.jpg"
 alt: "Tactile Sensory Attenuation"
