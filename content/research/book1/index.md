@@ -17,7 +17,7 @@ disableAnchoredHeadings: false
 
 **TaSA** (Two‑Phased deep learning of **Ta**ctile **S**ensory **A**ttenuation) operationalizes the neuroscience notion of sensory attenuation in robotic hands. The key idea is to **predict the tactile signal caused by the robot itself (self‑touch)** and subtract it from the **total tactile** reading at run time to reveal **external touch** that matters for manipulation.
 
-Hardware: **Allegro Hand** with **XELA uSkin** fingertips (30 tri‑axial taxels per finger). Task focus: **mechanical pencil lead insertion**—a contact‑rich, low‑signal task where self‑ and object‑contacts often overlap.
+Hardware: **Allegro Hand** with **XELA uSkin** fingertips (30 tri‑axial taxels per finger; ~6.5 mm spacing). Task focus: **mechanical pencil lead insertion**, coin insertion, and paper‑clip fixing—contact‑rich, low‑signal tasks where self‑ and object‑contacts often overlap.
 
 ---
 
@@ -29,96 +29,142 @@ Dense finger motions create frequent **finger–finger** and **finger–palm** c
 
 ## Method: Two‑Phase Learning
 
+### Notation
+
+* Total tactile at time (t): (T_t)
+* Predicted self‑touch: (\hat S_t)
+* External tactile (decision signal): (E_t = T_t - \hat S_t)
+* Joint positions: (q_t \in \mathbb{R}^8) (index & thumb; 4 DOF each)
+
 ### Phase 1 — Self‑Touch Learning (Prediction)
 
-We learn a predictor of future **self‑touch** from joint motion (and optionally current tactile):
+We learn a predictor of (future) **self‑touch** from joint motion (and optionally current commands):
 
-$$\hat{S}*{t+1} = f*\theta\big(J_t, J_{t+1}, T_t\big)$$
+$$
+\hat S_{t+1} = f_\theta!\big(q_t,; q^{\mathrm{cmd}}_t\big),
+$$
 
-with loss
+optimized with an (\ell_2) loss:
 
-$$\mathcal{L}*{\text{self}} = |S*{t+1} - \hat{S}_{t+1}|_2^2.$$
+$$
+\mathcal{L}*{\text{self}} ,=, \big| S*{t+1} - \hat S_{t+1} \big|_2^2.
+$$
 
-Here, (S) denotes the *self‑touch* component of tactile sensed during isolated self‑motion data (open/close and rubbing without an object). The dataset includes **8 joint positions** and **60 tri‑axial tactile points** collected over **500+ self‑touch episodes**.
+During Phase‑1 data collection, motions contain only **self‑contact** (open/close, rubbing; no objects). Each fingertip has **30 taxels × 3 axes = 90** channels, using **index + thumb → 180‑D tactile**. An FCN with hidden dim 128 (GELU, dropout 0.2) maps joint inputs to (\hat S).
 
-**External tactile** is then defined online as:
+**Online external tactile** is then computed as:
 
-$$E_t = T_t - \hat{S}_t,$$
+$$
+E_t = T_t - \hat S_t.
+$$
 
-where (T_t) is the **total tactile** at time (t).
-
-> Intuition: if the model can predict what self‑contact should feel like given the hand’s motion, the remainder is likely due to the **object** or environment.
+> Intuition: if the model can predict what self‑contact should feel like given the hand’s motion, the remainder is likely due to **object** contact.
 
 ### Phase 2 — Motion Learning (Generation)
 
-A recurrent policy (e.g., LSTM‑based **SAT‑RNN‑POS**) consumes **[total tactile (T), predicted self‑touch (\hat{S})]** (and joint states) to predict **future actions** and **future tactile**:
+A recurrent policy (LSTM‑based **ST‑RNN / SAT‑RNN**) consumes **raw tactile** and **predicted self‑touch** (plus joints) to predict **future joints/commands** and **future tactile**:
 
-$$J_{t+1},\ \hat{T}*{t+1} = g*\phi\big(J_{t-k:t},\ T_{t-k:t},\ \hat{S}_{t-k:t}\big).$$
+$$
+\begin{aligned}
+\mathbf{x}*t &= [, q_t,; \hat S_t,; T_t ,],\
+\hat q*{t+1},; \hat q^{\mathrm{cmd}}*{t+1},; \hat T*{t+1} &= g_\phi(\mathbf{x}_{t-k:t}).
+\end{aligned}
+$$
 
-We jointly minimize:
+We minimize a joint objective ((\ell_1) for joints/commands, (\ell_1) or (\ell_2) for tactile):
 
-$$\mathcal{L}*{\text{motion}} = \lambda_T|T*{t+1}-\hat{T}*{t+1}|*1 + \lambda_J|J*{t+1}-\hat{J}*{t+1}|_1,$$
+$$
+\mathcal{L}*{\text{motion}} ,=, \lambda_T,\big|T*{t+1}-\hat T_{t+1}\big|*1 ,+, \lambda_J,\big|q*{t+1}-\hat q_{t+1}\big|*1 , +, \lambda_C,\big|q^{\mathrm{cmd}}*{t+1}-\hat q^{\mathrm{cmd}}_{t+1}\big|_1.
+$$
 
-and (optionally) **backpropagate through the self‑touch module** so the policy learns when and how self‑contact will arise during planned motion.
+A **frozen** copy of the Phase‑1 FCN also provides **future** self‑touch estimates from predicted postures:
 
-**Architectural variants** (for ablations):
+$$
+\hat S_{t+1} ;=; f_\theta!\big(\hat q_{t+1},; \hat q^{\mathrm{cmd}}_t\big),
+$$
 
-* **T‑RNN:** total tactile only ((T)).
-* **S‑RNN:** self‑touch only ((\hat{S})).
-* **ST‑RNN / SAT‑RNN:** both ((T, \hat{S})) with attenuation logic.
+supporting attenuation during rollouts.
 
----
+#### Architectural Variants (ablations)
 
-## Mathematical Summary
-
-**Signals**
-
-* Total tactile: (T_t)
-* Predicted self‑touch: (\hat{S}_t)
-* External tactile (used for decision‑making): (E_t = T_t - \hat{S}_t)
-
-**Training objectives**
-
-* Self‑touch prediction: (\min_\theta \mathbb{E},|S_{t+1}-\hat{S}_{t+1}|_2^2)
-* Motion generation: (\min_\phi \mathbb{E},[\lambda_T|T_{t+1}-\hat{T}*{t+1}|*1 + \lambda_J|J*{t+1}-\hat{J}*{t+1}|_1])
+* **T‑RNN:** tactile only (T)
+* **S‑RNN:** self‑touch only (\hat S)
+* **ST‑RNN / SAT‑RNN:** both ((T, \hat S))
 
 ---
 
-## Experiment
+## Experimental Setup
 
-**Task:** Insert pencil lead into a mechanical pencil.
-**Challenge:** Subtle normal/shear forces; **self** and **object** contacts occur simultaneously.
-**Setup:** Allegro Hand (curved fingertips) + uSkin, side‑view “pitching” approach.
+* **Hand:** Allegro (16‑DOF). **Sensors:** XELA uSkin fingertips (index & thumb used; 60 taxels total; tri‑axial forces Fx,Fy,Fz).
+* **Teleop:** leader–follower with Dynamixel leader; joint positions streamed via U2D2.
+* **Training (motion phase):** batch 300, lr 1e‑3, **6000 epochs**.
+* **Self‑touch training:** **200 episodes** @ **10 Hz**, **400 steps** each; batch 100, lr 1e‑3, **20 000 epochs**, Adam (RTX 4070).
 
-**Data collection:**
+**Tasks** (Fig. 4):
 
-* Self‑touch set: hand open/close and finger rubbing (no object) to learn (\hat{S}).
-* Task set: insertion trials using the learned (\hat{S}) online to form (E=T-\hat{S}).
+1. **Paper‑clip fixing** (50 mm and 28 mm); train on {front, back}, test on {middle}.
+2. **Coin insertion** (1, 100, 500 yen) into narrow slot; train {left, right}, test {middle}.
+3. **Pencil‑lead insertion** (diameters {0.7, 0.9, 1.3, 1.4, 2.0} mm; angles {−20°, −10°, 0°, +10°, +20°}; train on −20°,0°, +20°; test on −10°, +10°).
 
 ---
 
-## Results (Representative)
+## Results
 
-* **Motion success rates (per‑condition average):**
+### Self‑Touch Prediction (Phase‑1)
 
-  * **ST‑RNN (Self + Total tactile): ~52%**
-  * **S‑RNN (Self‑only): ~38%**
-  * **T‑RNN (Total‑only): ~20%**
-* **Self‑touch prediction accuracy by axis:**
+Across held‑out episodes, (\hat S) closely tracks raw‑tactile during sustained finger–finger contact; the **error channel** spikes primarily at contact onsets/offsets, acting as a useful event cue rather than noise. Correlations on self‑contact segments are high (thumb: ~0.96; index: ~0.98).
 
-  * **Y‑axis:** high accuracy (external error ≈ 10–20)
-  * **Z‑axis:** moderate (error up to ~150)
-  * **X‑axis:** weaker (error often > 200)
+### Task Success (Phase‑2)
 
-**Takeaway:** Feeding **self‑touch alongside total tactile** improves motion clarity and helps the controller disambiguate finger contact from true object contact—crucial for precise in‑hand insertion.
+**Paper‑clip fixing (10 trials/condition)**
+
+|                         | **RT only**     | **RT+Self**      |
+| ----------------------- | --------------- | ---------------- |
+| Back (big/small)        | 8/10, 7/10      | **10/10, 10/10** |
+| Middle test (big/small) | 8/10, 8/10      | **10/10, 10/10** |
+| Front (big/small)       | 6/10, 5/10      | **9/10, 8/10**   |
+| **Total**               | **42/60 = 70%** | **57/60 = 95%**  |
+
+**Coin insertion (10 trials/condition)**
+
+| Slot →      | **Left**                         | **Middle (test)**                | **Right**                         | **Total**       |
+| ----------- | -------------------------------- | -------------------------------- | --------------------------------- | --------------- |
+| **RT only** | 1¥: 6/10, 100¥: 7/10, 500¥: 7/10 | 1¥: 7/10, 100¥: 7/10, 500¥: 7/10 | 1¥: 7/10, 100¥: 7/10, 500¥: 6/10  | **61/90 = 68%** |
+| **RT+Self** | 1¥: 9/10, 100¥: 9/10, 500¥: 7/10 | **1¥/100¥/500¥: 10/10**          | 1¥: 10/10, 100¥: 9/10, 500¥: 9/10 | **83/90 = 92%** |
+
+**Pencil‑lead insertion (10 trials/condition; (t)=test angles)**
+
+| Angle →                                      |      −20° |  −10° (t) |        0° |  +10° (t) |      +20° |         **Total** |
+| -------------------------------------------- | --------: | --------: | --------: | --------: | --------: | ----------------: |
+| **RT only** (0.7 / 0.9 / 1.3 / 1.4 / 2.0 mm) | 0/1/3/3/3 | 1/2/3/3/4 | 2/2/4/4/5 | 1/3/3/3/5 | 1/2/2/2/4 |  **66/250 = 26%** |
+| **RT+Self** (0.7 / 0.9 / 1.3 / 1.4 / 2.0 mm) | 3/4/6/6/7 | 5/6/7/7/8 | 5/5/8/8/9 | 4/4/6/7/8 | 4/3/5/5/6 | **146/250 = 58%** |
+
+**Takeaway:** Using **self‑touch alongside total tactile** improves motion clarity and helps the controller disambiguate finger contact from true object contact—crucial for precise in‑hand insertion and generalization to unseen conditions (e.g., middle coin slot, intermediate angles).
+
+---
+
+## Model Details (Phase‑1 FCN & Phase‑2 RNN)
+
+**Self‑Touch FCN (Phase‑1)**
+
+* **Input:** ([q_t, q^{\mathrm{cmd}}_t] \in \mathbb{R}^{16})
+* **Hidden:** 128 (GELU; dropout 0.2)
+* **Head:** Linear→GELU stacks mapping to: index tip (90), thumb tip (90), and auxiliary joint state (8)
+
+**Motion Learning RNN (Phase‑2)**
+
+* **Core:** LSTMCell, hidden = 100
+* **Inputs:** ST‑RNN: (T) (180) + (\hat S) (180) + (q_t) (8) → 368;  T‑RNN: (T) (180) + (q_t) (8) → 188
+* **Decoder:** Linear(100→128)→ReLU→Linear(128→196)
+* **Outputs:** (\hat T) index (90) + thumb (90), (\hat q_{t+1}) (8), (\hat q^{\mathrm{cmd}}_{t+1}) (8)
 
 ---
 
 ## Improvements & Future Work
 
-* Improve **axis‑dependent self‑touch prediction** (e.g., axis‑wise losses or attention).
-* Evaluate **generalization** to other precision tasks: bolt screwing, peg‑in‑hole, small‑object rotation/translation.
-* Test **object variability** (lead diameters/materials) and **multi‑finger** or **bimanual** self‑contact.
+* Improve **axis‑dependent** self‑touch fidelity (e.g., axis‑wise losses, attention).
+* Extend to **multi‑finger** settings (more dense self‑contacts) and **bimanual** cases.
+* Explore **explicit external‑tactile heads** trained on (E_t) distributions for even cleaner control signals.
 
 ---
 
