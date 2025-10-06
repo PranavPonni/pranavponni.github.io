@@ -9,7 +9,16 @@ disableAnchoredHeadings: false
 
 ## 🎓 Education 
 
-### Waseda University – School of Fundamental Science and Engineering  
+### Waseda University – School of Creative Science and Engineering  
+**Sep 2025 – Sep 2027 • Tokyo, Japan**
+
+- Graduate Program: Modern Mechanical Engineering 
+- Graduate Student Researcher @ Funabashi Group of AI Robot Manipulation in Sugano Lab
+- Co-supervised by Prof. Shigeki Sugano and Prof. Testuya Ogata
+
+---
+
+### Waseda University – School of Creative Science and Engineering  
 **Sep 2021 – Sep 2025 • Tokyo, Japan**
 
 - Undergraduate Major: Mechanical Engineering  
