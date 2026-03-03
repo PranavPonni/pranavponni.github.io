@@ -9,9 +9,8 @@ function Main() {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          {/* Replace this image with your own later (instructions below) */}
           <img 
-            src="https://via.placeholder.com/300" 
+            src="/Users/pranavponnivalavan/pranavponni.github.io/src/assets/images/prof.jpg" 
             alt="Pranav Ponnivalavan" 
           />
         </div>
@@ -48,7 +47,7 @@ function Main() {
             </a>
 
             <a 
-              href="https://www.linkedin.com/in/pranav-ponni/" 
+              href="https://www.linkedin.com/in/pranav-ponnivalavan-619733186" 
               target="_blank" 
               rel="noreferrer"
             >
