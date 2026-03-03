@@ -1,91 +1,104 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
-import Chip from '@mui/material/Chip';
-import '../assets/styles/Expertise.scss';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRobot, faBrain, faMicrochip } from "@fortawesome/free-solid-svg-icons";
+import Chip from "@mui/material/Chip";
+import "../assets/styles/Expertise.scss";
 
 const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+  "Dexterous Manipulation",
+  "In-Hand / In-Grasp Manipulation",
+  "Tactile Perception",
+  "Self-Contact Reasoning",
+  "Multi-Fingered Hands",
+  "Insertion Tasks",
+  "Real-World Robotics Evaluation",
 ];
 
 const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+  "Deep Predictive Learning",
+  "Sensory Attenuation (TaSA)",
+  "Sensorimotor Learning",
+  "Representation Learning",
+  "Imitation Learning",
+  "Reinforcement Learning",
+  "PyTorch",
+  "Python",
+  "Experiment Tracking",
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+  "Tactile Sensors",
+  "Robot Control",
+  "ROS / ROS2",
+  "Linux",
+  "Docker",
+  "Data Pipelines",
+  "Simulation-to-Real",
+  "Research Prototyping",
+  "Paper Writing (LaTeX)",
 ];
 
 function Expertise() {
-    return (
+  return (
     <div className="container" id="expertise">
-        <div className="skills-container">
-            <h1>Expertise</h1>
-            <div className="skills-grid">
-                <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsFirst.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
+      <div className="skills-container">
+        <h1>Expertise</h1>
 
-                <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsSecond.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
-                    <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
-                        {labelsThird.map((label, index) => (
-                            <Chip key={index} className='chip' label={label} />
-                        ))}
-                    </div>
-                </div>
+        <div className="skills-grid">
+          <div className="skill">
+            <FontAwesomeIcon icon={faRobot} size="3x" />
+            <h3>Dexterous Manipulation & Tactile Perception</h3>
+            <p>
+              I work on enabling robust in-grasp manipulation with multi-fingered robotic hands by
+              leveraging tactile feedback—especially in settings where self-contact is unavoidable.
+              My focus is on building systems that can discriminate self-generated touch from
+              external object contact to prevent failures during dexterous tasks.
+            </p>
+            <div className="flex-chips">
+              <span className="chip-title">Focus areas:</span>
+              {labelsFirst.map((label, index) => (
+                <Chip key={index} className="chip" label={label} />
+              ))}
             </div>
+          </div>
+
+          <div className="skill">
+            <FontAwesomeIcon icon={faBrain} size="3x" />
+            <h3>Deep Learning for Sensorimotor Intelligence</h3>
+            <p>
+              I design learning-based methods for tactile-driven manipulation. This includes
+              predictive modeling of self-touch dynamics and integrating those predictions into
+              policy learning to emphasize object-relevant signals—aligned with the sensory
+              attenuation principle used in human motor control.
+            </p>
+            <div className="flex-chips">
+              <span className="chip-title">Methods & tooling:</span>
+              {labelsSecond.map((label, index) => (
+                <Chip key={index} className="chip" label={label} />
+              ))}
+            </div>
+          </div>
+
+          <div className="skill">
+            <FontAwesomeIcon icon={faMicrochip} size="3x" />
+            <h3>Robotics Systems, Experiments & Deployment</h3>
+            <p>
+              I build end-to-end research prototypes—from sensor integration and control stacks to
+              reproducible training/evaluation pipelines—validated through real robot experiments
+              on fine tactile discrimination tasks (e.g., insertions with varied orientations and
+              object sizes).
+            </p>
+            <div className="flex-chips">
+              <span className="chip-title">Stack:</span>
+              {labelsThird.map((label, index) => (
+                <Chip key={index} className="chip" label={label} />
+              ))}
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    );
+  );
 }
 
 export default Expertise;
