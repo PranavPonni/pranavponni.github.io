@@ -12,7 +12,7 @@ function Main() {
           <img
             // IMPORTANT: don't use an absolute local file path in React builds
             // Put the image in /public and reference like "/images/prof.jpg"
-            src="/Users/pranavponnivalavan/pranavponni.github.io/src/assets/images/prof.jpg"
+            src="public/prof.jpg"
             alt="Pranav Ponnivalavan"
           />
         </div>
