@@ -7,35 +7,23 @@ import "../assets/styles/Expertise.scss";
 const labelsFirst = [
   "Dexterous Manipulation",
   "In-Hand / In-Grasp Manipulation",
-  "Tactile Perception",
-  "Self-Contact Reasoning",
+  "Tactile Sensing",
   "Multi-Fingered Hands",
-  "Insertion Tasks",
-  "Real-World Robotics Evaluation",
 ];
 
 const labelsSecond = [
   "Deep Predictive Learning",
-  "Sensory Attenuation (TaSA)",
-  "Sensorimotor Learning",
-  "Representation Learning",
-  "Imitation Learning",
-  "Reinforcement Learning",
+  "Imitation Learning",,
   "PyTorch",
   "Python",
-  "Experiment Tracking",
 ];
 
 const labelsThird = [
-  "Tactile Sensors",
   "Robot Control",
   "ROS / ROS2",
   "Linux",
   "Docker",
   "Data Pipelines",
-  "Simulation-to-Real",
-  "Research Prototyping",
-  "Paper Writing (LaTeX)",
 ];
 
 function Expertise() {
