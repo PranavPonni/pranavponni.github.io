@@ -12,7 +12,7 @@ function Main() {
           {/* Replace this image with your own later (instructions below) */}
           <img 
             src="https://via.placeholder.com/300" 
-            alt="Pranav Ponni" 
+            alt="Pranav Ponnivalavan" 
           />
         </div>
 
@@ -35,8 +35,8 @@ function Main() {
             </a>
           </div>
 
-          <h1>Pranav Ponni</h1>
-          <p>Software Engineer | Full Stack Developer</p>
+          <h1>Pranav Ponnivalavan</h1>
+          <p>Robotic Manipulation Graduate Researcher</p>
 
           <div className="mobile_social_icons">
             <a 
