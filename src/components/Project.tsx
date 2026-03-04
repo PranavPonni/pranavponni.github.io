@@ -6,37 +6,43 @@ const robotArmVideos = [
     title: "Bimanual object handling",
     href: "https://www.youtube.com/watch?v=avQ0WtzYIRw",
     embed: "https://www.youtube.com/embed/avQ0WtzYIRw",
-    description: "Home-built manipulation demo focused on coordinated arm motion and stable object handling.",
+    description:
+      "I extended the control code so I could manually guide the arm with a remote, record every servo step into a sequence, and replay that motion automatically. The same idea can be reused to store many task demonstrations and gradually turn manual routines into repeatable automated behaviors.",
   },
   {
     title: "Precision pick and place",
     href: "https://www.youtube.com/watch?v=obIE7zeA9dM",
     embed: "https://www.youtube.com/embed/obIE7zeA9dM",
-    description: "A hobby robot-arm setup performing repeatable grasping and controlled placement.",
+    description:
+      "This demo transfers different materials between cups using positional coordinates and joint-angle control. I tested both solids like glass sand and fluids like green tea, with the idea that higher performance servos and finer speed control would enable much cleaner, low-spill pouring.",
   },
   {
     title: "End-effector coordination",
     href: "https://www.youtube.com/watch?v=kfex-0hAYPs",
     embed: "https://www.youtube.com/embed/kfex-0hAYPs",
-    description: "Manipulation experiment exploring reachability, motion timing, and arm coordination.",
+    description:
+      "Here I was benchmarking the servo system itself: current, voltage, movement range, and the point where the robot could move at maximum speed with the least visible jitter. It was essentially an optimization pass to find the arm's most stable high-speed operating condition.",
   },
   {
     title: "Workspace manipulation test",
     href: "https://www.youtube.com/watch?v=Ln-NrnSU2Rs",
     embed: "https://www.youtube.com/embed/Ln-NrnSU2Rs",
-    description: "General manipulation pass showing object interaction across the working area of the arm.",
+    description:
+      "This project uses joint-angle control together with Jacobian-based kinematics so the robot can learn cup positions and stack them accurately. A lot of time went into refining coordinates and reducing jitter caused by servo current draw during placement.",
   },
   {
     title: "Control refinement demo",
     href: "https://www.youtube.com/watch?v=u2e-o8vRAPc",
     embed: "https://www.youtube.com/embed/u2e-o8vRAPc",
-    description: "Iteration focused on smoother arm control, better motion planning, and cleaner task execution.",
+    description:
+      "I used an HC-SR04 ultrasonic sensor to estimate box size from measured distance, then combined that sensing with forward and inverse kinematics to pick each box and sort it into the correct size bin automatically.",
   },
   {
     title: "Robot arm hobby build",
     href: "https://www.youtube.com/watch?v=M9erBA6l3XQ",
     embed: "https://www.youtube.com/embed/M9erBA6l3XQ",
-    description: "A broader look at the home robot-arm manipulation project and the system in action.",
+    description:
+      "This one was coded, calculated, and built by me for fun. It uses hand-worked forward and inverse kinematics with joint-angle calculations for a 4-DOF arm built around three joints and a gripper.",
   },
 ];
 
@@ -45,7 +51,7 @@ const mechatronicsProject = {
   href: "https://www.youtube.com/watch?v=pT1KjW0tySg",
   embed: "https://www.youtube.com/embed/pT1KjW0tySg",
   description:
-    "Selected as 1 of the 2 best projects out of 15 course projects for Mechatronics Laboratory Advanced.",
+    "An Arduino-based, zero-budget, remote-controlled 2-axis robot arm for sorting packages by size. It was designed as both a practical sorting prototype and an accessible DIY starter platform for students learning torque limits, axis control, and load calculations, and it was selected as 1 of the 2 best projects out of 15 in Mechatronics Laboratory Advanced.",
 };
 
 const printProjects = [
@@ -121,8 +127,8 @@ function Project() {
 
           <div className="project-print-grid">
             {printProjects.map((project) => (
-              <article key={project.title} className="project-media-card">
-                <div className="project-local-video">
+              <article key={project.title} className="project-media-card project-print-card">
+                <div className="project-local-video project-print-video">
                   <video controls playsInline preload="metadata">
                     <source src={project.src} type="video/quicktime" />
                     Your browser does not support the embedded video player.

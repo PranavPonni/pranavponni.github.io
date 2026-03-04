@@ -83,6 +83,14 @@
     max-height: 240px;
 }
 
+.project-print-card {
+    padding: 20px;
+}
+
+.project-print-video video {
+    max-height: 300px;
+}
+
 .project a h3:hover {
     text-decoration: underline;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
