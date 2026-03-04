@@ -1,6 +1,6 @@
 .research-container {
     width: 100%;
-    padding: 5% 10%;
+    padding: 0;
     box-sizing: border-box;
     text-align: left;
 }
@@ -130,6 +130,42 @@
     background: black;
 }
 
+.light-mode {
+    .research-container,
+    .research-container h1,
+    .research-container h2,
+    .research-container h3,
+    .research-container p,
+    .research-container a,
+    .research-container span,
+    .research-container code {
+        color: #0d1116;
+    }
+
+    .research-hero {
+        border-color: rgba(13, 17, 22, 0.08);
+        background:
+            radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 42%),
+            linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.84));
+    }
+
+    .research-media-card,
+    .research-content-block,
+    .research-video-panel {
+        border-color: rgba(13, 17, 22, 0.08);
+        background: rgba(13, 17, 22, 0.04);
+    }
+
+    .research-media-card span,
+    .research-video-copy span {
+        color: rgba(13, 17, 22, 0.6);
+    }
+
+    .research-video-frame {
+        border-color: rgba(13, 17, 22, 0.08);
+    }
+}
+
 @media screen {
     @media (max-width: 1024px) {
         .research-media-grid,
@@ -140,8 +176,8 @@
 
     @media (max-width: 768px) {
         .research-container {
-            padding-left: 5%;
-            padding-right: 5%;
+            padding-left: 0;
+            padding-right: 0;
         }
 
         .research-hero {
@@ -171,11 +207,6 @@
     }
 
     @media (max-width: 480px) {
-        .research-container {
-            padding-left: 4%;
-            padding-right: 4%;
-        }
-
         .research-hero {
             padding: 16px;
         }
