@@ -93,6 +93,19 @@
     padding-bottom: 30%;
 }
 
+.light-mode .about-section .life-update {
+    border-color: rgba(13, 17, 22, 0.1);
+    background: rgba(13, 17, 22, 0.04);
+
+    span {
+        color: rgba(13, 17, 22, 0.6);
+    }
+
+    p {
+        color: #0d1116;
+    }
+}
+
 @media screen {
     @media (max-width: 567px) {
         .nav-left{

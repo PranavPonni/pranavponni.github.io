@@ -129,7 +129,7 @@ function Project() {
             {printProjects.map((project) => (
               <article key={project.title} className="project-media-card project-print-card">
                 <div className="project-local-video project-print-video">
-                  <video controls playsInline preload="metadata">
+                  <video autoPlay muted loop controls playsInline preload="metadata">
                     <source src={project.src} type="video/quicktime" />
                     Your browser does not support the embedded video player.
                   </video>
