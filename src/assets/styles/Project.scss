@@ -5,7 +5,9 @@
     text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 28px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035));
+    background:
+        radial-gradient(circle at top right, rgba(80, 0, 202, 0.22), transparent 38%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
     backdrop-filter: blur(10px);
 }

@@ -11,7 +11,7 @@ import "../assets/styles/Timeline.scss";
 
 function Timeline() {
   return (
-    <div id="history">
+    <div id="experience">
       <div className="items-container">
         <h1>Experience</h1>
 

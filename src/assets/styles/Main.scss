@@ -10,14 +10,16 @@
     width: 100%;
     padding: 40px 15%;
     min-height: 700px;
-    background-image: url("../images/bg-dark.png");
+    background-image:
+        radial-gradient(circle at top right, rgba(80, 0, 202, 0.22), transparent 38%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+        url("../images/bg-dark.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 28px;
-    background-color: rgba(255, 255, 255, 0.04);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
     backdrop-filter: blur(10px);
 }
@@ -145,6 +147,13 @@
             padding-right: 5%;
             min-height: auto;
             border-radius: 22px;
+            background-image:
+                radial-gradient(circle at top right, rgba(80, 0, 202, 0.24), transparent 42%),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+                url("../images/bg-dark.png");
+            background-attachment: scroll;
+            background-size: cover;
+            background-position: center top;
         }
 
         .about-section .content {

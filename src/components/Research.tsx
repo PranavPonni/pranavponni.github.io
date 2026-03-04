@@ -30,7 +30,8 @@ const mediaItems = [
   },
 ];
 
-const mediaVideoSrc = `${process.env.PUBLIC_URL}/tasa%20short.mov`;
+const mediaVideoMp4Src = `${process.env.PUBLIC_URL}/tasa%20short.mp4`;
+const mediaVideoMovSrc = `${process.env.PUBLIC_URL}/tasa%20short.mov`;
 
 function ResearchCard({
   title,
@@ -100,12 +101,13 @@ function Research() {
                   <span>Demo video</span>
                   <h3>TaSA short demo</h3>
                   <p>
-                    Local demo footage bundled with the site from <code>public/tasa short.mov</code>.
+                    Showcase of task-based manipulation where TaSA is applied.
                   </p>
                 </div>
                 <div className="research-video-frame">
                   <video controls playsInline preload="metadata">
-                    <source src={mediaVideoSrc} type="video/quicktime" />
+                    <source src={mediaVideoMp4Src} type="video/mp4" />
+                    <source src={mediaVideoMovSrc} type="video/quicktime" />
                     Your browser does not support the embedded video player.
                   </video>
                 </div>
