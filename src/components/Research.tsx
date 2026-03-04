@@ -1,14 +1,6 @@
 import React from "react";
 import "../assets/styles/Research.scss";
 
-type Link = { label: string; href: string };
-
-const links: Link[] = [
-  { label: "arXiv", href: "https://arxiv.org/abs/2602.05468" },
-  { label: "PDF", href: "https://arxiv.org/pdf/2602.05468" },
-  { label: "DOI", href: "https://doi.org/10.48550/arXiv.2602.05468" },
-];
-
 const mediaItems = [
   {
     title: "Paper abstract",
@@ -33,29 +25,12 @@ const mediaItems = [
 const mediaVideoMp4Src = `${process.env.PUBLIC_URL}/tasa%20short.mp4`;
 const mediaVideoMovSrc = `${process.env.PUBLIC_URL}/tasa%20short.mov`;
 
-function ResearchCard({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="research-card research-inline-card">
-      <div className="research-card-header">
-        <h2>{title}</h2>
-      </div>
-      {children}
-    </section>
-  );
-}
-
 function Research() {
   return (
     <div className="container" id="research">
       <section className="research-container">
         <div className="research-hero">
-          <h1>Research</h1>
+          <h1 className="research-section-heading">Research</h1>
           <h2 className="research-title">
             TaSA: Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation for
             Improving In-Grasp Manipulation
@@ -69,10 +44,18 @@ function Research() {
             during policy learning.
           </p>
 
-          <div className="research-links">
-            {links.map((link) => (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
+          <div className="research-media-grid">
+            {mediaItems.map((item) => (
+              <a
+                key={item.href}
+                className="research-media-card"
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </a>
             ))}
           </div>
@@ -81,54 +64,32 @@ function Research() {
             arXiv:2602.05468 · Submitted Feb 5, 2026 · Comments: "ICRA 2026 accepted"
           </p>
 
-          <div className="research-inline-sections">
-            <ResearchCard title="Abstract">
-              <p>
-                Humans perform complex in-hand manipulation while multiple fingers
-                simultaneously contact both the object and each other. A key enabling mechanism
-                is sensory attenuation: predictable self-generated tactile sensations are
-                down-weighted so unexpected, task-relevant stimuli stand out. TaSA transfers this
-                principle to robotics with a two-stage learning pipeline: first learning
-                self-touch dynamics from the robot&apos;s own actions, then integrating that predictor
-                into downstream policy learning to emphasize object-contact signals for safer,
-                more reliable manipulation.
-              </p>
-            </ResearchCard>
+          <div className="research-content-block">
+            <h2>Abstract</h2>
+            <p>
+              Humans perform complex in-hand manipulation while multiple fingers simultaneously
+              contact both the object and each other. A key enabling mechanism is sensory
+              attenuation: predictable self-generated tactile sensations are down-weighted so
+              unexpected, task-relevant stimuli stand out. TaSA transfers this principle to
+              robotics with a two-stage learning pipeline: first learning self-touch dynamics from
+              the robot&apos;s own actions, then integrating that predictor into downstream policy
+              learning to emphasize object-contact signals for safer, more reliable manipulation.
+            </p>
+          </div>
 
-            <ResearchCard title="Media">
-              <div className="research-video-panel">
-                <div className="research-video-copy">
-                  <span>Demo video</span>
-                  <h3>TaSA short demo</h3>
-                  <p>
-                    Showcase of task-based manipulation where TaSA is applied.
-                  </p>
-                </div>
-                <div className="research-video-frame">
-                  <video controls playsInline preload="metadata">
-                    <source src={mediaVideoMp4Src} type="video/mp4" />
-                    <source src={mediaVideoMovSrc} type="video/quicktime" />
-                    Your browser does not support the embedded video player.
-                  </video>
-                </div>
-              </div>
-
-              <div className="research-media-grid">
-                {mediaItems.map((item) => (
-                  <a
-                    key={item.href}
-                    className="research-media-card"
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span>{item.label}</span>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </a>
-                ))}
-              </div>
-            </ResearchCard>
+          <div className="research-video-panel">
+            <div className="research-video-copy">
+              <span>Demo video</span>
+              <h3>TaSA short demo</h3>
+              <p>Showcase of task-based manipulation where TaSA is applied.</p>
+            </div>
+            <div className="research-video-frame">
+              <video controls playsInline preload="metadata">
+                <source src={mediaVideoMp4Src} type="video/mp4" />
+                <source src={mediaVideoMovSrc} type="video/quicktime" />
+                Your browser does not support the embedded video player.
+              </video>
+            </div>
           </div>
         </div>
       </section>
