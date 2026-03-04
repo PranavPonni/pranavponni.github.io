@@ -23,7 +23,6 @@ const labelsThird = [
   "ROS / ROS2",
   "Linux",
   "Docker",
-  "Data Pipelines",
 ];
 
 function Expertise() {
@@ -38,7 +37,7 @@ function Expertise() {
             <h3>Dexterous Manipulation & Tactile Perception</h3>
             <p>
               I work on enabling robust in-grasp manipulation with multi-fingered robotic hands by
-              leveraging tactile feedback—especially in settings where self-contact is unavoidable.
+              leveraging tactile feedback, especially in settings where self-contact is unavoidable.
               My focus is on building systems that can discriminate self-generated touch from
               external object contact to prevent failures during dexterous tasks.
             </p>
@@ -56,7 +55,7 @@ function Expertise() {
             <p>
               I design learning-based methods for tactile-driven manipulation. This includes
               predictive modeling of self-touch dynamics and integrating those predictions into
-              policy learning to emphasize object-relevant signals—aligned with the sensory
+              policy learning to emphasize object-relevant signals, aligned with the sensory
               attenuation principle used in human motor control.
             </p>
             <div className="flex-chips">
@@ -71,8 +70,8 @@ function Expertise() {
             <FontAwesomeIcon icon={faMicrochip} size="3x" />
             <h3>Robotics Systems, Experiments & Deployment</h3>
             <p>
-              I build end-to-end research prototypes—from sensor integration and control stacks to
-              reproducible training/evaluation pipelines—validated through real robot experiments
+              I build end-to-end research prototypes, from sensor integration and control stacks to
+              reproducible training/evaluation pipelines, validated through real robot experiments
               on fine tactile discrimination tasks (e.g., insertions with varied orientations and
               object sizes).
             </p>
