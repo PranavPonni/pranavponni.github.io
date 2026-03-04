@@ -47,6 +47,10 @@ function Main() {
 
           <h1>Pranav Ponnivalavan</h1>
           <p>Robotic Manipulation Graduate Researcher</p>
+          <div className="life-update">
+            <span>Life update</span>
+            <p>TaSA accepted in ICRA 2026, See you in Vienna :)</p>
+          </div>
 
           <div className="mobile_social_icons">
             <a

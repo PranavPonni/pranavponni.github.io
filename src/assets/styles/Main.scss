@@ -59,8 +59,31 @@
 .about-section .image-wrapper {
     z-index: 2;
     img {
-        width: 150px;
+        width: 190px;
         border-radius: 50%;
+    }
+}
+
+.about-section .life-update {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    max-width: 560px;
+
+    span {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.68);
+    }
+
+    p {
+        font-size: 1.05rem;
+        margin: 0;
     }
 }
 
@@ -166,6 +189,19 @@
         .about-section .image-wrapper {
             padding-left: 5%;
             width: 100%;
+
+            img {
+                width: 165px;
+            }
+        }
+
+        .about-section .life-update {
+            margin-top: 14px;
+            padding: 12px 14px;
+
+            p {
+                font-size: 0.95rem;
+            }
         }
     }
 }
