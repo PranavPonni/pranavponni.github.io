@@ -8,13 +8,18 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: 0px 15%;
+    padding: 40px 15%;
     min-height: 700px;
     background-image: url("../images/bg-dark.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    background-color: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(10px);
 }
 
 .about-section .content {
@@ -136,8 +141,10 @@
         .about-section {
             padding-top: 150px;
             display: block;
-            padding-left: 0px;
-            padding-right: 0px;
+            padding-left: 5%;
+            padding-right: 5%;
+            min-height: auto;
+            border-radius: 22px;
         }
 
         .about-section .content {

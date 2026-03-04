@@ -13,7 +13,7 @@ const labelsFirst = [
 
 const labelsSecond = [
   "Deep Predictive Learning",
-  "Imitation Learning",,
+  "Imitation Learning",
   "PyTorch",
   "Python",
 ];
