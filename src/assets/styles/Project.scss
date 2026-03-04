@@ -41,7 +41,7 @@
 .project-series-grid,
 .project-print-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -73,8 +73,14 @@
     aspect-ratio: 16 / 9;
 }
 
+.project-embed-frame {
+    max-width: 100%;
+}
+
 .project-local-video video {
-    max-height: 340px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    max-height: 240px;
 }
 
 .project a h3:hover {
@@ -82,7 +88,20 @@
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
+.project-badge {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
 @media screen {
+    @media (max-width: 1200px) {
+        .project-series-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
     @media (max-width: 900px) {
         .project-series-grid,
         .project-print-grid {

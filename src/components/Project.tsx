@@ -62,6 +62,16 @@ const printProjects = [
 ];
 
 function Project() {
+  const robotArmSeries = [
+    ...robotArmVideos,
+    {
+      title: mechatronicsProject.title,
+      href: mechatronicsProject.href,
+      embed: mechatronicsProject.embed,
+      description: mechatronicsProject.description,
+    },
+  ];
+
   return (
     <div className="projects-container" id="projects">
       <h1>Projects</h1>
@@ -70,11 +80,14 @@ function Project() {
         <section className="project project-feature">
           <div className="project-header">
             <h2>Robot Arm Manipulation</h2>
-            <p>Home robotics hobby series documenting robot-arm manipulation experiments and control iterations.</p>
+            <p>
+              Home robotics hobby series documenting robot-arm manipulation experiments and control
+              iterations, including the highlighted Mechatronics Laboratory Advanced project.
+            </p>
           </div>
 
           <div className="project-series-grid">
-            {robotArmVideos.map((video) => (
+            {robotArmSeries.map((video) => (
               <article key={video.href} className="project-media-card">
                 <div className="project-embed-frame">
                   <iframe
@@ -89,32 +102,15 @@ function Project() {
                 <a href={video.href} target="_blank" rel="noreferrer">
                   <h3>{video.title}</h3>
                 </a>
+                {video.title === mechatronicsProject.title ? (
+                  <p className="project-badge">
+                    Selected as 1 of the 2 best projects out of 15 course projects.
+                  </p>
+                ) : null}
                 <p>{video.description}</p>
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="project">
-          <div className="project-header">
-            <h2>{mechatronicsProject.title}</h2>
-            <p>{mechatronicsProject.description}</p>
-          </div>
-
-          <div className="project-embed-frame">
-            <iframe
-              src={mechatronicsProject.embed}
-              title={mechatronicsProject.title}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-
-          <a href={mechatronicsProject.href} target="_blank" rel="noreferrer">
-            <h3>Watch project video</h3>
-          </a>
         </section>
 
         <section className="project">
