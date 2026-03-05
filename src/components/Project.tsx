@@ -70,25 +70,23 @@ const printProjects = [
 const workVideos = {
   fingerVision: [
     {
-      title: "cable_manip",
+      title: "Cable Manipulation",
       src: `${process.env.PUBLIC_URL}/cable_manip.mov`,
       description:
         "Manipulation of cable reorientation from Y axis to X axis.",
     },
     {
-      title: "card_manip",
+      title: "Card Manipulation",
       src: `${process.env.PUBLIC_URL}/card_manip.mov`,
       description:
         "Manipulation of picking one card from a pack of three, then placing two on one side and one on the other.",
     },
   ],
   oid: {
-    title: "o-id",
     src: `${process.env.PUBLIC_URL}/o-id.mov`,
     description: "Render of design of the body of a humanoid in Fusion 360.",
   },
   tcs: {
-    title: "tcs",
     src: `${process.env.PUBLIC_URL}/tcs.mov`,
     description:
       "Teleoperation demo showing brush contact on a cardboard edge to extract force data through haptic feedback.",
@@ -111,6 +109,56 @@ function Project() {
       <h1>Projects</h1>
 
       <div className="projects-grid">
+        <section className="project">
+          <div className="project-header">
+            <h2>Work</h2>
+          </div>
+
+          <div className="work-subsection">
+            <h3>FingerVision</h3>
+            <div className="work-video-grid">
+              {workVideos.fingerVision.map((video) => (
+                <article key={video.title} className="project-media-card work-video-card">
+                  <div className="project-local-video">
+                    <video autoPlay muted loop controls playsInline preload="metadata">
+                      <source src={video.src} type="video/quicktime" />
+                      Your browser does not support the embedded video player.
+                    </video>
+                  </div>
+                  <h4>{video.title}</h4>
+                  <p>{video.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="work-subsection">
+            <h3>O-ID</h3>
+            <article className="project-media-card work-video-card">
+              <div className="project-local-video">
+                <video autoPlay muted loop controls playsInline preload="metadata">
+                  <source src={workVideos.oid.src} type="video/quicktime" />
+                  Your browser does not support the embedded video player.
+                </video>
+              </div>
+              <p>{workVideos.oid.description}</p>
+            </article>
+          </div>
+
+          <div className="work-subsection">
+            <h3>TCS</h3>
+            <article className="project-media-card work-video-card">
+              <div className="project-local-video">
+                <video autoPlay muted loop controls playsInline preload="metadata">
+                  <source src={workVideos.tcs.src} type="video/quicktime" />
+                  Your browser does not support the embedded video player.
+                </video>
+              </div>
+              <p>{workVideos.tcs.description}</p>
+            </article>
+          </div>
+        </section>
+
         <section className="project project-feature">
           <div className="project-header">
             <h2>Robot Arm Manipulation</h2>
@@ -166,58 +214,6 @@ function Project() {
                 <p>{project.description}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="project">
-          <div className="project-header">
-            <h2>Work</h2>
-          </div>
-
-          <div className="work-subsection">
-            <h3>FingerVision</h3>
-            <div className="work-video-grid">
-              {workVideos.fingerVision.map((video) => (
-                <article key={video.title} className="project-media-card work-video-card">
-                  <div className="project-local-video">
-                    <video autoPlay muted loop controls playsInline preload="metadata">
-                      <source src={video.src} type="video/quicktime" />
-                      Your browser does not support the embedded video player.
-                    </video>
-                  </div>
-                  <h4>{video.title}</h4>
-                  <p>{video.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="work-subsection">
-            <h3>O-ID</h3>
-            <article className="project-media-card work-video-card">
-              <div className="project-local-video">
-                <video autoPlay muted loop controls playsInline preload="metadata">
-                  <source src={workVideos.oid.src} type="video/quicktime" />
-                  Your browser does not support the embedded video player.
-                </video>
-              </div>
-              <h4>{workVideos.oid.title}</h4>
-              <p>{workVideos.oid.description}</p>
-            </article>
-          </div>
-
-          <div className="work-subsection">
-            <h3>TCS</h3>
-            <article className="project-media-card work-video-card">
-              <div className="project-local-video">
-                <video autoPlay muted loop controls playsInline preload="metadata">
-                  <source src={workVideos.tcs.src} type="video/quicktime" />
-                  Your browser does not support the embedded video player.
-                </video>
-              </div>
-              <h4>{workVideos.tcs.title}</h4>
-              <p>{workVideos.tcs.description}</p>
-            </article>
           </div>
         </section>
       </div>
