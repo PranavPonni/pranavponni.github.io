@@ -123,7 +123,10 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 
   .about-section {
-    background-image: url("./assets/images/bg-light.png");
+    background-image:
+      radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 42%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.84)),
+      url("./assets/images/bg-light.png");
   }
 
   .skills-container svg {
@@ -135,24 +138,19 @@ p, a, h1, h2, h3, h4, h5, label, button {
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   }
 
-  .vertical-timeline::before {
-    background-color: rgba(0, 0, 0, 0.08);
-  }
-
-  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
-    color: gray;
-  }
-
-  .vertical-timeline-element-content-arrow {
-    border-right: 7px solid rgba(0, 0, 0, 0.08) !important;
-  }
-
   .flex-chips .chip-title {
     color: #0d1116;
+  }
+
+  .about-section,
+  .skills-container,
+  .research-hero,
+  .items-container,
+  .projects-container {
+    border-color: rgba(13, 17, 22, 0.1);
+    background:
+      radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 44%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.84));
   }
 }
 

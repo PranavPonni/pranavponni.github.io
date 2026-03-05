@@ -140,6 +140,27 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+.light-mode {
+    .project,
+    .project-media-card {
+        border-color: rgba(13, 17, 22, 0.1);
+        background: rgba(13, 17, 22, 0.04);
+    }
+
+    .project-badge {
+        color: rgba(13, 17, 22, 0.7);
+    }
+
+    .work-video-group {
+        color: rgba(13, 17, 22, 0.65);
+    }
+
+    .work-video-card h4,
+    .work-video-card p {
+        color: #0d1116;
+    }
+}
+
 @media screen {
     @media (max-width: 1200px) {
         .project-series-grid {

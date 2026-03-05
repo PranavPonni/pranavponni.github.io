@@ -57,12 +57,14 @@ const mechatronicsProject = {
 const printProjects = [
   {
     title: "Time in Hand",
-    src: `${process.env.PUBLIC_URL}/hand.mov`,
+    srcMp4: `${process.env.PUBLIC_URL}/hand.mp4`,
+    srcMov: `${process.env.PUBLIC_URL}/hand.mov`,
     description: "Self-designed and printed working clock built in the shape of a hand.",
   },
   {
     title: "The Green Goblin",
-    src: `${process.env.PUBLIC_URL}/quad.mov`,
+    srcMp4: `${process.env.PUBLIC_URL}/quad.mp4`,
+    srcMov: `${process.env.PUBLIC_URL}/quad.mov`,
     description: "Self-designed and printed quadrupod prototype exploring motion and mechanical character.",
   },
 ];
@@ -71,23 +73,27 @@ const workVideos = {
   fingerVision: [
     {
       title: "Cable Manipulation",
-      src: `${process.env.PUBLIC_URL}/cable_manip.mov`,
+      srcMp4: `${process.env.PUBLIC_URL}/cable_manip.mp4`,
+      srcMov: `${process.env.PUBLIC_URL}/cable_manip.mov`,
       description:
         "Manipulation of cable reorientation from Y axis to X axis.",
     },
     {
       title: "Card Manipulation",
-      src: `${process.env.PUBLIC_URL}/card_manip.mov`,
+      srcMp4: `${process.env.PUBLIC_URL}/card_manip.mp4`,
+      srcMov: `${process.env.PUBLIC_URL}/card_manip.mov`,
       description:
         "Manipulation of picking one card from a pack of three, then placing two on one side and one on the other.",
     },
   ],
   oid: {
-    src: `${process.env.PUBLIC_URL}/o-id.mov`,
+    srcMp4: `${process.env.PUBLIC_URL}/o-id.mp4`,
+    srcMov: `${process.env.PUBLIC_URL}/o-id.mov`,
     description: "Render of design of the body of a humanoid in Fusion 360.",
   },
   tcs: {
-    src: `${process.env.PUBLIC_URL}/tcs.mov`,
+    srcMp4: `${process.env.PUBLIC_URL}/tcs.mp4`,
+    srcMov: `${process.env.PUBLIC_URL}/tcs.mov`,
     description:
       "Teleoperation demo showing brush contact on a cardboard edge to extract force data through haptic feedback.",
   },
@@ -108,25 +114,29 @@ function Project() {
     {
       group: "FingerVision",
       title: workVideos.fingerVision[0].title,
-      src: workVideos.fingerVision[0].src,
+      srcMp4: workVideos.fingerVision[0].srcMp4,
+      srcMov: workVideos.fingerVision[0].srcMov,
       description: workVideos.fingerVision[0].description,
     },
     {
       group: "FingerVision",
       title: workVideos.fingerVision[1].title,
-      src: workVideos.fingerVision[1].src,
+      srcMp4: workVideos.fingerVision[1].srcMp4,
+      srcMov: workVideos.fingerVision[1].srcMov,
       description: workVideos.fingerVision[1].description,
     },
     {
       group: "O-ID",
       title: "Humanoid Body Render",
-      src: workVideos.oid.src,
+      srcMp4: workVideos.oid.srcMp4,
+      srcMov: workVideos.oid.srcMov,
       description: workVideos.oid.description,
     },
     {
       group: "TCS",
       title: "Teleoperation Force Demo",
-      src: workVideos.tcs.src,
+      srcMp4: workVideos.tcs.srcMp4,
+      srcMov: workVideos.tcs.srcMov,
       description: workVideos.tcs.description,
     },
   ];
@@ -146,7 +156,8 @@ function Project() {
               <article key={`${video.group}-${video.title}`} className="project-media-card work-video-card">
                 <div className="project-local-video work-local-video">
                   <video autoPlay muted loop controls playsInline preload="metadata">
-                    <source src={video.src} type="video/quicktime" />
+                    <source src={video.srcMp4} type="video/mp4" />
+                    <source src={video.srcMov} type="video/quicktime" />
                     Your browser does not support the embedded video player.
                   </video>
                 </div>
@@ -205,7 +216,8 @@ function Project() {
               <article key={project.title} className="project-media-card project-print-card">
                 <div className="project-local-video project-print-video">
                   <video autoPlay muted loop controls playsInline preload="metadata">
-                    <source src={project.src} type="video/quicktime" />
+                    <source src={project.srcMp4} type="video/mp4" />
+                    <source src={project.srcMov} type="video/quicktime" />
                     Your browser does not support the embedded video player.
                   </video>
                 </div>
