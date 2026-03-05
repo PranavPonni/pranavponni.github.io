@@ -19,7 +19,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Oct 2025 – Present"
-            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            iconStyle={{ color: "white" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -43,7 +43,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Sep 2025 – Present"
-            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            iconStyle={{ color: "white" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -61,7 +61,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Sep 2025 – Feb 2026"
-            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            iconStyle={{ color: "white" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -86,7 +86,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Mar 2024 – Aug 2025"
-            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            iconStyle={{ color: "white" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -103,7 +103,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Jul 2024 – Aug 2024"
-            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            iconStyle={{ color: "white" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">
@@ -124,7 +124,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="Feb 2023 – May 2023"
-            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            iconStyle={{ color: "white" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">

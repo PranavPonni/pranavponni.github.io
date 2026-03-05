@@ -26,6 +26,15 @@
     border-right: 7px solid rgba(255, 255, 255, 0.16) !important;
 }
 
+.vertical-timeline-element-icon {
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) !important;
+    backdrop-filter: blur(10px);
+    background:
+        radial-gradient(circle at top right, rgba(80, 0, 202, 0.28), transparent 48%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06)) !important;
+}
+
 .vertical-timeline-element h3,
 .vertical-timeline-element h4,
 .vertical-timeline-element p {
@@ -55,6 +64,13 @@
 
     .vertical-timeline-element-content-arrow {
         border-right: 7px solid rgba(13, 17, 22, 0.16) !important;
+    }
+
+    .vertical-timeline-element-icon {
+        border-color: rgba(13, 17, 22, 0.12) !important;
+        background:
+            radial-gradient(circle at top right, rgba(80, 0, 202, 0.16), transparent 52%),
+            linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86)) !important;
     }
 
     .vertical-timeline-element h3,

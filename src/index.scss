@@ -35,7 +35,26 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #0d1116;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(80, 0, 202, 0.22), transparent 44%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(10px);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+    animation: navShimmer 7s linear infinite;
+    pointer-events: none;
+  }
 
   button {
     font-size: 1.1rem;
@@ -106,7 +125,10 @@ p, a, h1, h2, h3, h4, h5, label, button {
   background-color: #f8f9fa;
 
   .navigation-bar {
-    background-color: #f8f9fa;
+    border-color: rgba(13, 17, 22, 0.12);
+    background:
+      radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 48%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.84));
   }
 
   p, a, h1, h2, h3, h4, h5, label, button {
@@ -146,12 +168,18 @@ p, a, h1, h2, h3, h4, h5, label, button {
   .skills-container,
   .research-hero,
   .items-container,
-  .projects-container {
+  .projects-container,
+  .navigation-bar {
     border-color: rgba(13, 17, 22, 0.1);
     background:
       radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 44%),
       linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.84));
   }
+}
+
+@keyframes navShimmer {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(360%); }
 }
 
 @media screen {
