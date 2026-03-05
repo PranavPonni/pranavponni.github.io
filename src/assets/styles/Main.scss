@@ -188,7 +188,7 @@
             min-height: auto;
             border-radius: 22px;
             background-image:
-                radial-gradient(circle at top right, rgba(80, 0, 202, 0.24), transparent 42%),
+                radial-gradient(circle at top right, rgba(80, 0, 202, 0.24), transparent 35%),
                 linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
                 url("../images/bg-dark.png");
             background-attachment: scroll;
@@ -223,7 +223,7 @@
 
         .light-mode .about-section {
             background-image:
-                radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 44%),
+                radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 35%),
                 linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.82)),
                 url("../images/bg-light.png");
         }
