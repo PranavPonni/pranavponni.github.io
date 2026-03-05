@@ -72,7 +72,18 @@ function Navigation({parentToChild, modeChange}: any) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" id="navigation" className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}>
+      <AppBar
+        component="nav"
+        id="navigation"
+        className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}
+        elevation={0}
+        color="transparent"
+        sx={{
+          backgroundColor: "transparent",
+          backgroundImage: "none",
+          boxShadow: "none",
+        }}
+      >
         <Toolbar className='navigation-bar'>
           <IconButton
             color="inherit"
@@ -90,7 +101,13 @@ function Navigation({parentToChild, modeChange}: any) {
           )}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: '#fff' }}>
+              <Button
+                key={item[0]}
+                onClick={() => scrollToSection(item[1])}
+                sx={{
+                  color: "inherit",
+                }}
+              >
                 {item[0]}
               </Button>
             ))}
