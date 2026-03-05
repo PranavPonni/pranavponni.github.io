@@ -63,7 +63,7 @@
     margin-bottom: 14px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    background: rgba(0, 0, 0, 0.22);
+    background: transparent;
 }
 
 .project-embed-frame iframe,
@@ -83,9 +83,10 @@
 }
 
 .project-local-video video {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
     object-fit: contain;
-    max-height: 240px;
+    height: auto;
+    max-height: none;
 }
 
 .project-print-card {
