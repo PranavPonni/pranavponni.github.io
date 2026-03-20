@@ -1,6 +1,25 @@
 import React from "react";
 import "../assets/styles/Publications.scss";
 
+const MY_NAME = "Pranav Ponnivalavan";
+
+function AuthorList({ authors }: { authors: string }) {
+  return (
+    <span>
+      {authors.split(", ").map((name, i, arr) => (
+        <React.Fragment key={i}>
+          {name === MY_NAME ? (
+            <strong className="pub-author-highlight">{name}</strong>
+          ) : (
+            name
+          )}
+          {i < arr.length - 1 && ", "}
+        </React.Fragment>
+      ))}
+    </span>
+  );
+}
+
 const publicationItems = [
   {
     type: "Conference Paper",
@@ -11,6 +30,7 @@ const publicationItems = [
     venue: "IEEE ICRA 2026 · International Conference on Robotics and Automation",
     links: [
       { label: "arXiv", href: "https://arxiv.org/abs/2602.05468" },
+      { label: "PDF", href: "https://arxiv.org/pdf/2602.05468" },
     ],
   },
   {
@@ -44,7 +64,7 @@ function Publications() {
               <div className="publication-entry">
                 <span className="pub-type-badge">{item.type}</span>
                 <h2 className="pub-title">{item.title}</h2>
-                <p className="pub-authors">{item.authors}</p>
+                <p className="pub-authors"><AuthorList authors={item.authors} /></p>
                 <p className="pub-venue">{item.venue}</p>
                 <div className="pub-links">
                   {item.links.map((link) => (
