@@ -3,29 +3,27 @@ import "../assets/styles/Publications.scss";
 
 const publicationItems = [
   {
+    type: "Conference Paper",
     title:
       "TaSA: Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation for Improving In-Grasp Manipulation",
-    comments: "8 pages, 8 figures, 8 tables, ICRA2026 accepted",
-    subjects: "Robotics (cs.RO)",
     authors:
       "Pranav Ponnivalavan, Satoshi Funabashi, Alexander Schmitz, Tetsuya Ogata, Shigeki Sugano",
-    href: "https://arxiv.org/abs/2602.05468",
-    label: "View on arXiv",
+    venue: "IEEE ICRA 2026 · International Conference on Robotics and Automation",
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/abs/2602.05468" },
+    ],
   },
   {
+    type: "Workshop Paper",
     title:
       "Learning Heterogeneous Tactile Representations with Graph Neural Networks for Dexterous Manipulation",
     authors:
       "Tai Yamada, Satoshi Funabashi, Steven Oh, Pranav Ponnivalavan, Kazutaka Omori, Tetsuya Ogata, Shigeki SUGANO",
-    date: "19 Mar 2026 (modified: 20 Mar 2026)",
-    venue: "IEEE ICRA 2026 Workshop ViTac Submission",
-    workshop:
-      "ViTac, Tai Yamada, Satoshi Funabashi, Steven Oh, Pranav Ponnivalavan, Kazutaka Omori, Tetsuya Ogata, Shigeki SUGANO",
-    revision: "Revisions",
-    license: "CC BY 4.0",
-    href: "https://openreview.net/forum?id=GCq58uWqZ7",
-    pdfHref: "https://openreview.net/pdf?id=GCq58uWqZ7",
-    label: "View on OpenReview",
+    venue: "ViTac Workshop · IEEE ICRA 2026",
+    links: [
+      { label: "OpenReview", href: "https://openreview.net/forum?id=GCq58uWqZ7" },
+      { label: "PDF", href: "https://openreview.net/pdf?id=GCq58uWqZ7" },
+    ],
   },
 ];
 
@@ -39,37 +37,30 @@ function Publications() {
           manipulation.
         </p>
 
-        <div className="publications-grid">
-          {publicationItems.map((item) => (
-            <div key={item.href} className="publication-card">
-              <h2>{item.title}</h2>
-
-              {item.comments && <p>Comments: {item.comments}</p>}
-              {item.subjects && <p>Subjects: {item.subjects}</p>}
-
-              <p>{item.authors}</p>
-
-              {item.date && <p>{item.date}</p>}
-              {item.venue && <p>{item.venue}</p>}
-              {item.workshop && <p>{item.workshop}</p>}
-              {item.revision && <p>{item.revision}</p>}
-              {item.license && <p>{item.license}</p>}
-
-              <p>
-                <a href={item.href} target="_blank" rel="noreferrer">
-                  {item.label}
-                </a>
-                {item.pdfHref && (
-                  <>
-                    {" "}
-                    |{" "}
-                    <a href={item.pdfHref} target="_blank" rel="noreferrer">
-                      Download PDF
+        <div className="publications-list">
+          {publicationItems.map((item, index) => (
+            <React.Fragment key={item.title}>
+              {index > 0 && <hr className="pub-divider" />}
+              <div className="publication-entry">
+                <span className="pub-type-badge">{item.type}</span>
+                <h2 className="pub-title">{item.title}</h2>
+                <p className="pub-authors">{item.authors}</p>
+                <p className="pub-venue">{item.venue}</p>
+                <div className="pub-links">
+                  {item.links.map((link) => (
+                    <a
+                      key={link.href}
+                      className="pub-link"
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label} ↗
                     </a>
-                  </>
-                )}
-              </p>
-            </div>
+                  ))}
+                </div>
+              </div>
+            </React.Fragment>
           ))}
         </div>
       </section>

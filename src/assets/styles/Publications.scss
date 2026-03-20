@@ -15,8 +15,7 @@
 .publications-container h1,
 .publications-container h2,
 .publications-container p,
-.publications-container span,
-.publications-container a {
+.publications-container span {
     color: white;
 }
 
@@ -28,80 +27,174 @@
 
 .publications-summary {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     max-width: 820px;
     line-height: 1.7;
+    color: rgba(255, 255, 255, 0.78);
 }
 
-.publications-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+/* ── list layout ── */
+.publications-list {
+    display: flex;
+    flex-direction: column;
 }
 
-.publication-card {
-    display: block;
-    padding: 20px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.05);
-    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out;
+.pub-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 32px 0;
 }
 
-.publication-card:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.12);
+.publication-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.publication-card span {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.62);
-}
-
-.publication-card h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    line-height: 1.4;
-}
-
-.publication-card p {
-    margin: 0;
+/* type badge */
+.pub-type-badge {
+    display: inline-block;
+    width: fit-content;
+    padding: 3px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(80, 0, 202, 0.22);
+    font-size: 0.72rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.85);
 }
 
+/* title */
+.pub-title {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: white;
+}
+
+/* authors */
+.pub-authors {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* venue */
+.pub-venue {
+    margin: 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.58);
+}
+
+/* link buttons — liquid glass */
+.pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.18) 0%,
+        rgba(255, 255, 255, 0.06) 100%
+    );
+    backdrop-filter: blur(14px) saturate(160%);
+    box-shadow:
+        0 2px 14px rgba(80, 0, 202, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: white;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+
+    &:hover {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.28) 0%,
+            rgba(80, 0, 202, 0.28) 100%
+        );
+        box-shadow:
+            0 4px 22px rgba(80, 0, 202, 0.36),
+            inset 0 1px 0 rgba(255, 255, 255, 0.32);
+        transform: translateY(-2px);
+        color: white;
+    }
+}
+
+/* ── light mode ── */
 .light-mode {
-    .publications-container,
-    .publication-card {
+    .publications-container {
         border-color: rgba(13, 17, 22, 0.08);
-        background: rgba(13, 17, 22, 0.04);
+        background:
+            radial-gradient(circle at top right, rgba(80, 0, 202, 0.12), transparent 42%),
+            linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.84));
     }
 
-    .publications-container,
     .publications-container h1,
-    .publications-container h2,
-    .publications-container p,
-    .publications-container span,
-    .publications-container a {
+    .pub-title {
         color: #0d1116;
     }
 
-    .publication-card span {
-        color: rgba(13, 17, 22, 0.6);
+    .publications-summary,
+    .pub-authors {
+        color: rgba(13, 17, 22, 0.65);
+    }
+
+    .pub-venue {
+        color: rgba(13, 17, 22, 0.5);
+    }
+
+    .pub-type-badge {
+        border-color: rgba(13, 17, 22, 0.15);
+        background: rgba(80, 0, 202, 0.1);
+        color: rgba(13, 17, 22, 0.75);
+    }
+
+    .pub-divider {
+        border-top-color: rgba(13, 17, 22, 0.1);
+    }
+
+    .pub-link {
+        border-color: rgba(13, 17, 22, 0.2);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.72) 0%,
+            rgba(255, 255, 255, 0.42) 100%
+        );
+        box-shadow:
+            0 2px 14px rgba(80, 0, 202, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        color: #0d1116;
+
+        &:hover {
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(80, 0, 202, 0.12) 100%
+            );
+            color: #0d1116;
+        }
     }
 }
 
 @media screen {
-    @media (max-width: 1024px) {
-        .publications-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
     @media (max-width: 768px) {
         .publications-container {
             padding: 24px;
@@ -112,8 +205,8 @@
             font-size: 1.9rem;
         }
 
-        .publication-card {
-            padding: 16px;
+        .pub-title {
+            font-size: 1.18rem;
         }
     }
 
@@ -124,6 +217,10 @@
 
         .publications-heading {
             font-size: 1.6rem;
+        }
+
+        .pub-title {
+            font-size: 1.05rem;
         }
     }
 }
