@@ -45,6 +45,18 @@ const publicationItems = [
       { label: "PDF", href: "https://openreview.net/pdf?id=GCq58uWqZ7" },
     ],
   },
+  {
+    type: "Workshop Paper",
+    title:
+      "A uSkin Fingertip with a Tactile Fingernail for Contact-Rich Dexterous Manipulation",
+    authors:
+      "Steven Oh, Satoshi Funabashi, Hiroki Niimi, Tai Yamada, Kazutaka Omori, Pranav Ponnivalavan, Tetsuya Ogata, Shigeki SUGANO",
+    venue: "IEEE ICRA 2026 Workshop Dex Submission",
+    links: [
+      { label: "OpenReview", href: "https://openreview.net/forum?id=POuDNj8jbA" },
+      { label: "PDF", href: "https://openreview.net/pdf?id=POuDNj8jbA" },
+    ],
+  },
 ];
 
 function Publications() {
