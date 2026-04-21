@@ -69,8 +69,53 @@ const printProjects = [
   },
 ];
 
+const dataGloveProjects = [
+  {
+    group: "MANUS",
+    title: "Quantum Finger Tracking",
+    videos: [
+      {
+        srcMp4: `${process.env.PUBLIC_URL}/manus.mp4`,
+        srcMov: undefined,
+      },
+    ],
+    description:
+      "Currently used for research and for controlling the Allegro Hand. MANUS's precise Quantum tracking technology captures highly detailed movement without the usual finger-capture restrictions, helping save animation time while preserving realistic motion.",
+  },
+  {
+    group: "Haptikos",
+    title: "Mechanical Tracking System",
+    videos: [
+      {
+        srcMp4: `${process.env.PUBLIC_URL}/haptikos1.mp4`,
+        srcMov: undefined,
+      },
+      {
+        srcMp4: `${process.env.PUBLIC_URL}/haptikos2.mp4`,
+        srcMov: undefined,
+      },
+    ],
+    description:
+      "Haptikos uses a mechanical tracking approach that delivers clean data without interference or error accumulation, making it more stable and reliable than competing tracking systems.",
+  },
+];
+
 const workVideos = {
   fingerVision: [
+    {
+      title: "Cable Between Poles",
+      srcMp4: `${process.env.PUBLIC_URL}/fvcable.mp4`,
+      srcMov: undefined,
+      description:
+        "Manipulation of a cable between poles in factory settings. Achieved continuous motion for 30 minutes with a success rate of 87%.",
+    },
+    {
+      title: "Bento Plate Wiping",
+      srcMp4: `${process.env.PUBLIC_URL}/fvwipe.mp4`,
+      srcMov: undefined,
+      description:
+        "Picking up a sponge and cleaning a bento plate after an oil spill.",
+    },
     {
       title: "Cable Manipulation",
       srcMp4: `${process.env.PUBLIC_URL}/cable_manip.mp4`,
@@ -111,20 +156,13 @@ function Project() {
   ];
 
   const workSeries = [
-    {
+    ...workVideos.fingerVision.map((video) => ({
       group: "FingerVision",
-      title: workVideos.fingerVision[0].title,
-      srcMp4: workVideos.fingerVision[0].srcMp4,
-      srcMov: workVideos.fingerVision[0].srcMov,
-      description: workVideos.fingerVision[0].description,
-    },
-    {
-      group: "FingerVision",
-      title: workVideos.fingerVision[1].title,
-      srcMp4: workVideos.fingerVision[1].srcMp4,
-      srcMov: workVideos.fingerVision[1].srcMov,
-      description: workVideos.fingerVision[1].description,
-    },
+      title: video.title,
+      srcMp4: video.srcMp4,
+      srcMov: video.srcMov,
+      description: video.description,
+    })),
     {
       group: "O-ID",
       title: "Humanoid Body Render",
@@ -157,13 +195,47 @@ function Project() {
                 <div className="project-local-video work-local-video">
                   <video autoPlay muted loop controls playsInline preload="metadata">
                     <source src={video.srcMp4} type="video/mp4" />
-                    <source src={video.srcMov} type="video/quicktime" />
+                    {video.srcMov ? <source src={video.srcMov} type="video/quicktime" /> : null}
                     Your browser does not support the embedded video player.
                   </video>
                 </div>
                 <span className="work-video-group">{video.group}</span>
                 <h4>{video.title}</h4>
                 <p>{video.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="project">
+          <div className="project-header">
+            <h2>Data Gloves</h2>
+            <p>
+              Hand-tracking glove systems used for research, dexterous teleoperation, and motion
+              capture experiments.
+            </p>
+          </div>
+
+          <div className="project-print-grid data-glove-grid">
+            {dataGloveProjects.map((project) => (
+              <article key={project.title} className="project-media-card data-glove-card">
+                <div className="data-glove-video-stack">
+                  {project.videos.map((video) => (
+                    <div
+                      key={`${project.group}-${video.srcMp4}`}
+                      className="project-local-video work-local-video data-glove-local-video"
+                    >
+                      <video autoPlay muted loop controls playsInline preload="metadata">
+                        <source src={video.srcMp4} type="video/mp4" />
+                        {video.srcMov ? <source src={video.srcMov} type="video/quicktime" /> : null}
+                        Your browser does not support the embedded video player.
+                      </video>
+                    </div>
+                  ))}
+                </div>
+                <span className="work-video-group">{project.group}</span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
               </article>
             ))}
           </div>
