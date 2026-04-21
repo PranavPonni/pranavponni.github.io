@@ -97,30 +97,6 @@
     max-height: 450px;
 }
 
-.data-glove-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.data-glove-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.data-glove-video-stack {
-    display: grid;
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.data-glove-video-stack .project-local-video {
-    margin-bottom: 0;
-}
-
-.data-glove-local-video {
-    aspect-ratio: 16 / 9;
-}
-
 .project a h3:hover {
     text-decoration: underline;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
@@ -189,9 +165,7 @@
 
 @media screen {
     @media (max-width: 1200px) {
-        .project-series-grid,
-        .project-print-grid,
-        .data-glove-grid {
+        .project-series-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
@@ -199,7 +173,6 @@
     @media (max-width: 900px) {
         .project-series-grid,
         .project-print-grid,
-        .data-glove-grid,
         .work-video-grid {
             grid-template-columns: 1fr;
         }

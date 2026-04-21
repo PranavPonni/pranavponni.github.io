@@ -21,10 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Large source videos kept locally; site uses compressed mp4 versions
-/public/fvcable.MOV
-/public/fvwipe.mov
-/public/hpatikos1.mov
-/public/haptikos2.mov
-/public/manus.mov
