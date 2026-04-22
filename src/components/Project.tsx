@@ -1,13 +1,6 @@
 import React from "react";
 import "../assets/styles/Project.scss";
 
-type LocalVideoItem = {
-  title: string;
-  description: string;
-  srcMp4?: string;
-  srcMov?: string;
-};
-
 const robotArmVideos = [
   {
     title: "Bimanual object handling",
@@ -76,38 +69,35 @@ const printProjects = [
   },
 ];
 
-const fingerVisionWorkVideos: LocalVideoItem[] = [
-  {
-    title: "Manipulation of cable and hooking",
-    srcMov: `${process.env.PUBLIC_URL}/fvcable.mov`,
-    description: "FingerVision demo focused on manipulation of cable and hooking.",
+const workVideos = {
+  fingerVision: [
+    {
+      title: "Cable Manipulation",
+      srcMp4: `${process.env.PUBLIC_URL}/cable_manip.mp4`,
+      srcMov: `${process.env.PUBLIC_URL}/cable_manip.mov`,
+      description:
+        "Manipulation of cable reorientation from Y axis to X axis.",
+    },
+    {
+      title: "Card Manipulation",
+      srcMp4: `${process.env.PUBLIC_URL}/card_manip.mp4`,
+      srcMov: `${process.env.PUBLIC_URL}/card_manip.mov`,
+      description:
+        "Manipulation of picking one card from a pack of three, then placing two on one side and one on the other.",
+    },
+  ],
+  oid: {
+    srcMp4: `${process.env.PUBLIC_URL}/o-id.mp4`,
+    srcMov: `${process.env.PUBLIC_URL}/o-id.mov`,
+    description: "Render of design of the body of a humanoid in Fusion 360.",
   },
-  {
-    title: "Removing spill of oil on bento plate",
-    srcMov: `${process.env.PUBLIC_URL}/fvspill.mov`,
-    description: "FingerVision demo of removing spill of oil on a bento plate.",
-  },
-];
-
-const teleoperationMethodVideos: LocalVideoItem[] = [
-  {
-    title: "Leader Device",
-    srcMov: `${process.env.PUBLIC_URL}/leader.MOV`,
+  tcs: {
+    srcMp4: `${process.env.PUBLIC_URL}/tcs.mp4`,
+    srcMov: `${process.env.PUBLIC_URL}/tcs.mov`,
     description:
-      "Uses a Dynamixel-servo leader device, modeled after an Allegro Hand, to control two fingers: thumb and index.",
+      "Teleoperation demo showing brush contact on a cardboard edge to extract force data through haptic feedback.",
   },
-  {
-    title: "Manus",
-    srcMp4: `${process.env.PUBLIC_URL}/manus.mp4`,
-    description:
-      "Manus data gloves using quantum technology to operate the Allegro Hand.",
-  },
-  {
-    title: "Haptikos",
-    srcMp4: `${process.env.PUBLIC_URL}/haptikos.mp4`,
-    description: "Mechanical gloves used to control the Allegro Hand.",
-  },
-];
+};
 
 function Project() {
   const robotArmSeries = [
@@ -117,6 +107,37 @@ function Project() {
       href: mechatronicsProject.href,
       embed: mechatronicsProject.embed,
       description: mechatronicsProject.description,
+    },
+  ];
+
+  const workSeries = [
+    {
+      group: "FingerVision",
+      title: workVideos.fingerVision[0].title,
+      srcMp4: workVideos.fingerVision[0].srcMp4,
+      srcMov: workVideos.fingerVision[0].srcMov,
+      description: workVideos.fingerVision[0].description,
+    },
+    {
+      group: "FingerVision",
+      title: workVideos.fingerVision[1].title,
+      srcMp4: workVideos.fingerVision[1].srcMp4,
+      srcMov: workVideos.fingerVision[1].srcMov,
+      description: workVideos.fingerVision[1].description,
+    },
+    {
+      group: "O-ID",
+      title: "Humanoid Body Render",
+      srcMp4: workVideos.oid.srcMp4,
+      srcMov: workVideos.oid.srcMov,
+      description: workVideos.oid.description,
+    },
+    {
+      group: "TCS",
+      title: "Teleoperation Force Demo",
+      srcMp4: workVideos.tcs.srcMp4,
+      srcMov: workVideos.tcs.srcMov,
+      description: workVideos.tcs.description,
     },
   ];
 
@@ -130,42 +151,21 @@ function Project() {
             <h2>Work</h2>
           </div>
 
-          <div className="project-subsection">
-            <h3>FingerVision</h3>
-            <div className="work-video-grid work-video-grid-square">
-              {fingerVisionWorkVideos.map((video) => (
-                <article key={video.title} className="project-media-card work-video-card">
-                  <div className="project-local-video work-local-video">
-                    <video autoPlay muted loop controls playsInline preload="metadata">
-                      {video.srcMp4 ? <source src={video.srcMp4} type="video/mp4" /> : null}
-                      {video.srcMov ? <source src={video.srcMov} type="video/quicktime" /> : null}
-                      Your browser does not support the embedded video player.
-                    </video>
-                  </div>
-                  <h4>{video.title}</h4>
-                  <p>{video.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="project-subsection">
-            <h3>Teleoperation Methods</h3>
-            <div className="work-video-grid work-video-grid-square">
-              {teleoperationMethodVideos.map((video) => (
-                <article key={video.title} className="project-media-card work-video-card">
-                  <div className="project-local-video work-local-video">
-                    <video autoPlay muted loop controls playsInline preload="metadata">
-                      {video.srcMp4 ? <source src={video.srcMp4} type="video/mp4" /> : null}
-                      {video.srcMov ? <source src={video.srcMov} type="video/quicktime" /> : null}
-                      Your browser does not support the embedded video player.
-                    </video>
-                  </div>
-                  <h4>{video.title}</h4>
-                  <p>{video.description}</p>
-                </article>
-              ))}
-            </div>
+          <div className="work-video-grid work-video-grid-square">
+            {workSeries.map((video) => (
+              <article key={`${video.group}-${video.title}`} className="project-media-card work-video-card">
+                <div className="project-local-video work-local-video">
+                  <video autoPlay muted loop controls playsInline preload="metadata">
+                    <source src={video.srcMp4} type="video/mp4" />
+                    <source src={video.srcMov} type="video/quicktime" />
+                    Your browser does not support the embedded video player.
+                  </video>
+                </div>
+                <span className="work-video-group">{video.group}</span>
+                <h4>{video.title}</h4>
+                <p>{video.description}</p>
+              </article>
+            ))}
           </div>
         </section>
 
