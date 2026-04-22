@@ -32,6 +32,15 @@
     margin-bottom: 18px;
 }
 
+.project-subsection + .project-subsection {
+    margin-top: 24px;
+}
+
+.project-subsection h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
 .project-header h2,
 .project h3 {
     margin-top: 0;
@@ -131,15 +140,6 @@
     object-fit: contain;
 }
 
-.work-video-group {
-    display: inline-block;
-    margin-bottom: 8px;
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
-}
-
 .light-mode {
     .project,
     .project-media-card {
@@ -151,10 +151,6 @@
 
     .project-badge {
         color: rgba(13, 17, 22, 0.7);
-    }
-
-    .work-video-group {
-        color: rgba(13, 17, 22, 0.65);
     }
 
     .work-video-card h4,
