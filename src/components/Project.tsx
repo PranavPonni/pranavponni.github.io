@@ -82,6 +82,12 @@ const dataGloveVideos = [
     description:
       "Haptikos unique tracking technology (mechanical) provides clean data vs competitors with no interference-error accumulation.",
   },
+  {
+    title: "Leader",
+    srcMp4: `${process.env.PUBLIC_URL}/leader.mp4`,
+    description:
+      "Leader device built using Dynamixel servos to model the thumb and index fingers of the Allegro Hand to control it using direct servo joint angle translation.",
+  },
 ];
 
 const workVideos = {
