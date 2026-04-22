@@ -69,8 +69,37 @@ const printProjects = [
   },
 ];
 
+const dataGloveVideos = [
+  {
+    title: "Manus Data Gloves",
+    srcMp4: `${process.env.PUBLIC_URL}/manus.mp4`,
+    description:
+      "Currently used for research and controlling Allegro Hand. MANUS's unique precise Quantum tracking technology allows you to capture all kinds of detailed movements.",
+  },
+  {
+    title: "Haptikos",
+    srcMp4: `${process.env.PUBLIC_URL}/haptikos.mp4`,
+    description:
+      "Haptikos unique tracking technology (mechanical) provides clean data vs competitors with no interference-error accumulation.",
+  },
+];
+
 const workVideos = {
   fingerVision: [
+    {
+      title: "Factory Pole Cable Manipulation",
+      srcMp4: `${process.env.PUBLIC_URL}/fvcable.mp4`,
+      srcMov: `${process.env.PUBLIC_URL}/fvcable.mov`,
+      description:
+        "Manipulation of cable between poles in factory settings; achieved continuous motion for 30 mins with a success rate of 87%.",
+    },
+    {
+      title: "Bento Plate Oil Spill Cleaning",
+      srcMp4: `${process.env.PUBLIC_URL}/fvspill.mp4`,
+      srcMov: `${process.env.PUBLIC_URL}/fvspill.mov`,
+      description:
+        "Picking up a sponge and cleaning a bento plate that has an oil spill.",
+    },
     {
       title: "Cable Manipulation",
       srcMp4: `${process.env.PUBLIC_URL}/cable_manip.mp4`,
@@ -133,6 +162,20 @@ function Project() {
       description: workVideos.oid.description,
     },
     {
+      group: "FingerVision",
+      title: workVideos.fingerVision[2].title,
+      srcMp4: workVideos.fingerVision[2].srcMp4,
+      srcMov: workVideos.fingerVision[2].srcMov,
+      description: workVideos.fingerVision[2].description,
+    },
+    {
+      group: "FingerVision",
+      title: workVideos.fingerVision[3].title,
+      srcMp4: workVideos.fingerVision[3].srcMp4,
+      srcMov: workVideos.fingerVision[3].srcMov,
+      description: workVideos.fingerVision[3].description,
+    },
+    {
       group: "TCS",
       title: "Teleoperation Force Demo",
       srcMp4: workVideos.tcs.srcMp4,
@@ -162,6 +205,31 @@ function Project() {
                   </video>
                 </div>
                 <span className="work-video-group">{video.group}</span>
+                <h4>{video.title}</h4>
+                <p>{video.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="project">
+          <div className="project-header">
+            <h2>Data Gloves</h2>
+            <p>
+              Teleoperation glove systems used in research workflows for controlling Allegro Hand
+              with high-fidelity motion capture.
+            </p>
+          </div>
+
+          <div className="work-video-grid work-video-grid-square">
+            {dataGloveVideos.map((video) => (
+              <article key={video.title} className="project-media-card work-video-card">
+                <div className="project-local-video work-local-video">
+                  <video autoPlay muted loop controls playsInline preload="metadata">
+                    <source src={video.srcMp4} type="video/mp4" />
+                    Your browser does not support the embedded video player.
+                  </video>
+                </div>
                 <h4>{video.title}</h4>
                 <p>{video.description}</p>
               </article>
