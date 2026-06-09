@@ -3,8 +3,8 @@ import "../assets/styles/Research.scss";
 
 const mediaItems = [
   {
-    title: "Paper abstract",
-    description: "Primary paper entry on arXiv with metadata and citation details.",
+    title: "Paper",
+    description: "Primary paper entry on arXiv.",
     href: "https://arxiv.org/abs/2602.05468",
     label: "Open arXiv",
   },
@@ -36,14 +36,6 @@ function Research() {
             Improving In-Grasp Manipulation
           </h2>
 
-          <p className="research-summary">
-            TaSA tackles a practical bottleneck in dexterous robotic hands: during manipulation,
-            robots must distinguish tactile signals caused by self-contact from those caused by
-            external object contact. Inspired by human sensory attenuation, TaSA learns a
-            self-touch prediction model first, then uses it to emphasize object-contact signals
-            during policy learning.
-          </p>
-
           <div className="research-media-grid">
             {mediaItems.map((item) => (
               <a
@@ -58,23 +50,6 @@ function Research() {
                 <p>{item.description}</p>
               </a>
             ))}
-          </div>
-
-          <p className="research-meta">
-            arXiv:2602.05468 · Submitted Feb 5, 2026 · Comments: "ICRA 2026 accepted"
-          </p>
-
-          <div className="research-content-block">
-            <h2>Abstract</h2>
-            <p>
-              Humans perform complex in-hand manipulation while multiple fingers simultaneously
-              contact both the object and each other. A key enabling mechanism is sensory
-              attenuation: predictable self-generated tactile sensations are down-weighted so
-              unexpected, task-relevant stimuli stand out. TaSA transfers this principle to
-              robotics with a two-stage learning pipeline: first learning self-touch dynamics from
-              the robot&apos;s own actions, then integrating that predictor into downstream policy
-              learning to emphasize object-contact signals for safer, more reliable manipulation.
-            </p>
           </div>
 
           <div className="research-video-panel">

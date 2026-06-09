@@ -67,6 +67,12 @@ const printProjects = [
     srcMov: `${process.env.PUBLIC_URL}/quad.mov`,
     description: "Self-designed and printed quadrupod prototype exploring motion and mechanical character.",
   },
+  {
+    title: "Smart Pot",
+    srcMp4: `${process.env.PUBLIC_URL}/smart-pot-h2o-stand.mp4`,
+    srcMov: `${process.env.PUBLIC_URL}/smart-pot-h2o-stand.mov`,
+    description: "Smart Pot with H2O monitoring + Stationary Stand",
+  },
 ];
 
 const dataGloveVideos = [

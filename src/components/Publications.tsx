@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/styles/Publications.scss";
 
 const MY_NAME = "Pranav Ponnivalavan";
@@ -65,12 +65,14 @@ const mediaItems = [
     alt: "Screenshot of the Nikkan Kogyou Shimbun article about TaSA",
   },
   {
-    src: `${process.env.PUBLIC_URL}/nikkan-kogyo-shimbun-page-0001.jpg`,
-    alt: "Full Nikkan Kogyo Shimbun newspaper page featuring TaSA",
+    src: `${process.env.PUBLIC_URL}/nikkan-kogyo-shimbun-yellow.png`,
+    alt: "Highlighted Nikkan Kogyo Shimbun newspaper article featuring TaSA",
   },
 ];
 
 function Publications() {
+  const [selectedMedia, setSelectedMedia] = useState<(typeof mediaItems)[number] | null>(null);
+
   return (
     <div className="container" id="publications">
       <section className="publications-container">
@@ -115,7 +117,8 @@ function Publications() {
               Media
             </h2>
             <p className="publications-media-caption">
-              TaSA was published as a news article in Nikkan Kogyou Shimbun 日刊工業新聞
+              TaSA was published as a news article in Nikkan Kogyou Shimbun 日刊工業新聞,
+              June 2, 2026.
             </p>
             <a
               className="pub-link"
@@ -130,11 +133,42 @@ function Publications() {
           <div className="publications-media-grid">
             {mediaItems.map((item) => (
               <figure className="publications-media-card" key={item.src}>
-                <img src={item.src} alt={item.alt} loading="lazy" />
+                <button
+                  className="publications-media-button"
+                  type="button"
+                  onClick={() => setSelectedMedia(item)}
+                  aria-label={`Open larger image: ${item.alt}`}
+                >
+                  <img src={item.src} alt={item.alt} loading="lazy" />
+                </button>
               </figure>
             ))}
           </div>
         </section>
+
+        {selectedMedia && (
+          <div
+            className="publications-lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Expanded media image"
+            onClick={() => setSelectedMedia(null)}
+          >
+            <button
+              className="publications-lightbox-close"
+              type="button"
+              onClick={() => setSelectedMedia(null)}
+              aria-label="Close expanded media image"
+            >
+              ×
+            </button>
+            <img
+              src={selectedMedia.src}
+              alt={selectedMedia.alt}
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>
+        )}
       </section>
     </div>
   );

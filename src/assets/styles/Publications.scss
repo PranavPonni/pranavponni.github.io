@@ -27,8 +27,8 @@
 
 .publications-subheading {
     margin: 0;
-    font-size: 1.55rem;
-    line-height: 1.3;
+    font-size: 2.2rem;
+    line-height: 1.2;
 }
 
 .publications-summary {
@@ -188,12 +188,59 @@
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
-.publications-media-card img {
+.publications-media-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.publications-media-button img {
     display: block;
     width: 100%;
     height: 420px;
     object-fit: contain;
     background: rgba(255, 255, 255, 0.92);
+}
+
+.publications-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background: rgba(0, 0, 0, 0.82);
+    cursor: zoom-out;
+}
+
+.publications-lightbox img {
+    display: block;
+    max-width: min(1200px, 94vw);
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+
+.publications-lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.56);
+    color: white;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
 }
 
 /* ── light mode ── */
@@ -272,7 +319,8 @@
             border-radius: 22px;
         }
 
-        .publications-heading {
+        .publications-heading,
+        .publications-subheading {
             font-size: 1.9rem;
         }
 
@@ -284,7 +332,7 @@
             grid-template-columns: 1fr;
         }
 
-        .publications-media-card img {
+        .publications-media-button img {
             height: auto;
             max-height: 560px;
         }
@@ -295,16 +343,13 @@
             padding: 16px;
         }
 
-        .publications-heading {
+        .publications-heading,
+        .publications-subheading {
             font-size: 1.6rem;
         }
 
         .pub-title {
             font-size: 1.05rem;
-        }
-
-        .publications-subheading {
-            font-size: 1.3rem;
         }
     }
 }

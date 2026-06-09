@@ -46,7 +46,22 @@ function Main() {
           </div>
 
           <h1>Pranav Ponnivalavan</h1>
-          <p>Robotic Manipulation Graduate Researcher</p>
+          <p>
+            Robotic Manipulation Graduate Researcher in{" "}
+            <a className="lab-link" href="https://ogata-lab.jp" target="_blank" rel="noreferrer">
+              Ogata
+            </a>{" "}
+            and{" "}
+            <a
+              className="lab-link"
+              href="https://www.sugano.mech.waseda.ac.jp"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Sugano
+            </a>{" "}
+            Laboratory
+          </p>
           <div className="life-update">
             <span>Life update</span>
             <p>Presented TaSA &amp; 2 workshop papers @ ICRA Vienna, Austria, Jun 1-5, 2026</p>
