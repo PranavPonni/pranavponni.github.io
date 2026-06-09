@@ -25,6 +25,12 @@
     font-size: 2.2rem;
 }
 
+.publications-subheading {
+    margin: 0;
+    font-size: 1.55rem;
+    line-height: 1.3;
+}
+
 .publications-summary {
     margin-top: 0;
     margin-bottom: 28px;
@@ -147,6 +153,49 @@
     }
 }
 
+.publications-media {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.publications-media-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.publications-media-caption {
+    margin: 0;
+    max-width: 760px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.publications-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.publications-media-card {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.publications-media-card img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.92);
+}
+
 /* ── light mode ── */
 .light-mode {
     .publications-container {
@@ -162,8 +211,15 @@
     }
 
     .publications-summary,
-    .pub-authors {
+    .pub-authors,
+    .publications-media-caption {
         color: rgba(13, 17, 22, 0.65);
+    }
+
+    .publications-media-card {
+        border-color: rgba(13, 17, 22, 0.1);
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 12px 28px rgba(13, 17, 22, 0.08);
     }
 
     .pub-author-highlight {
@@ -223,6 +279,15 @@
         .pub-title {
             font-size: 1.18rem;
         }
+
+        .publications-media-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .publications-media-card img {
+            height: auto;
+            max-height: 560px;
+        }
     }
 
     @media (max-width: 480px) {
@@ -236,6 +301,10 @@
 
         .pub-title {
             font-size: 1.05rem;
+        }
+
+        .publications-subheading {
+            font-size: 1.3rem;
         }
     }
 }

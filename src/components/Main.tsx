@@ -49,7 +49,7 @@ function Main() {
           <p>Robotic Manipulation Graduate Researcher</p>
           <div className="life-update">
             <span>Life update</span>
-            <p>TaSA accepted in ICRA 2026, See you in Vienna :)</p>
+            <p>Presented TaSA &amp; 2 workshop papers @ ICRA Vienna, Austria, Jun 1-5, 2026</p>
           </div>
 
           <div className="mobile_social_icons">

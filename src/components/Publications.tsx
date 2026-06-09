@@ -59,6 +59,17 @@ const publicationItems = [
   },
 ];
 
+const mediaItems = [
+  {
+    src: `${process.env.PUBLIC_URL}/nikkan-kogyo-shimbun-article-screenshot.png`,
+    alt: "Screenshot of the Nikkan Kogyou Shimbun article about TaSA",
+  },
+  {
+    src: `${process.env.PUBLIC_URL}/nikkan-kogyo-shimbun-page-0001.jpg`,
+    alt: "Full Nikkan Kogyo Shimbun newspaper page featuring TaSA",
+  },
+];
+
 function Publications() {
   return (
     <div className="container" id="publications">
@@ -95,6 +106,35 @@ function Publications() {
             </React.Fragment>
           ))}
         </div>
+
+        <hr className="pub-divider" />
+
+        <section className="publications-media" aria-labelledby="publications-media-heading">
+          <div className="publications-media-header">
+            <h2 id="publications-media-heading" className="publications-subheading">
+              Media
+            </h2>
+            <p className="publications-media-caption">
+              TaSA was published as a news article in Nikkan Kogyou Shimbun 日刊工業新聞
+            </p>
+            <a
+              className="pub-link"
+              href="https://www.nikkan.co.jp/articles/view/00782813"
+              target="_blank"
+              rel="noreferrer"
+            >
+              News article ↗
+            </a>
+          </div>
+
+          <div className="publications-media-grid">
+            {mediaItems.map((item) => (
+              <figure className="publications-media-card" key={item.src}>
+                <img src={item.src} alt={item.alt} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </section>
       </section>
     </div>
   );
