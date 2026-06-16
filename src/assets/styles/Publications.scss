@@ -66,7 +66,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     background: rgba(80, 0, 202, 0.22);
     font-size: 0.72rem;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: rgba(255, 255, 255, 0.85);
@@ -76,7 +76,7 @@
 .pub-title {
     margin: 0;
     font-size: 1.35rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.4;
     color: white;
 }
@@ -85,13 +85,13 @@
 .pub-authors {
     margin: 0;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.72);
 }
 
 .pub-author-highlight {
-    font-weight: 700;
+    font-weight: 400;
     color: white;
     background: linear-gradient(90deg, rgba(80, 0, 202, 0.35), rgba(120, 40, 255, 0.2));
     padding: 1px 6px;
@@ -104,7 +104,7 @@
     margin: 0;
     font-size: 0.9rem;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 200;
     color: rgba(255, 255, 255, 0.58);
 }
 
@@ -133,7 +133,7 @@
         0 2px 14px rgba(80, 0, 202, 0.18),
         inset 0 1px 0 rgba(255, 255, 255, 0.22);
     font-size: 0.88rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.03em;
     color: white;
     text-decoration: none;
