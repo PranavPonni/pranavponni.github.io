@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Main, Timeline, Research, Publications, Project, Navigation, Footer } from './components';
 import './index.scss';
+import AeroBackground from './components/AeroBackground';
 
 const pages: Record<string, { title: string; component: React.ReactNode }> = {
   'index.html': { title: 'Home', component: <Main /> },
@@ -17,6 +18,7 @@ function App() {
     <div className="aero-site">
       <a className="skip-link" href="#main-content">Skip to content</a>
       <div className="atmosphere" aria-hidden="true" />
+      <AeroBackground />
       <Navigation currentPage={path} />
       <main id="main-content">
         {page ? page.component : <section className="not-found"><h1>Page not found</h1><a href="/">Return home ↗</a></section>}

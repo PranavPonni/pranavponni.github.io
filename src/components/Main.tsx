@@ -10,7 +10,6 @@ function Main() {
           <p className="hero-description">Exploring how robots<br />sense, learn &amp; interact.</p>
           <a className="primary-link" href="/research.html">Explore my research <span>↗</span></a>
           <SocialLinks />
-          <img className="robot-nature-art" src={`${process.env.PUBLIC_URL}/robot-nature.png`} alt="" aria-hidden="true" />
         </div>
         <aside className="bio-panel">
           <div className="bio-top"><div className="portrait-wrap"><img src={`${process.env.PUBLIC_URL}/prof.png`} alt="Pranav Ponnivalavan" /></div><div><span className="eyebrow">ABOUT ME</span><p>M.Eng · Waseda University</p><span className="location"><i className="status-dot" /> Currently in Tokyo</span></div></div>
