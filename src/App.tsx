@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="aero-site">
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <div className="atmosphere" aria-hidden="true"><i /><i /><i /></div>
+      <div className="atmosphere" aria-hidden="true" />
       <Navigation currentPage={path} />
       <main id="main-content">
         {page ? page.component : <section className="not-found"><h1>Page not found</h1><a href="/">Return home ↗</a></section>}
