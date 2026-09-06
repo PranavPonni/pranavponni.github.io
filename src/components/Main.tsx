@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialLinks from './SocialLinks';
 const External = ({ href, children }: { href: string; children: React.ReactNode }) => <a href={href} target="_blank" rel="noreferrer">{children}</a>;
 function Main() {
   return (
@@ -9,6 +10,7 @@ function Main() {
           <h1 id="name">Pranav<br /><span>Ponnivalavan</span><span className="name-period">.</span></h1>
           <p className="hero-description">Exploring how robots<br />sense, learn &amp; interact.</p>
           <a className="primary-link" href="/research.html">Explore my research <span>↗</span></a>
+          <SocialLinks />
           <div className="hero-orbit" aria-hidden="true"><div className="glass-sphere" /><span className="orbit-line" /><span className="orbit-satellite" /></div>
         </div>
         <aside className="bio-panel">

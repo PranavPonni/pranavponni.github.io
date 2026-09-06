@@ -209,7 +209,7 @@ function Project() {
             {workSeries.map((video) => (
               <article key={`${video.group}-${video.title}`} className="project-media-card work-video-card">
                 <div className="project-local-video work-local-video">
-                  <video muted loop controls playsInline preload="metadata">
+                  <video autoPlay muted loop controls playsInline preload="auto">
                     <source src={video.srcMp4} type="video/mp4" />
                     <source src={video.srcMov} type="video/quicktime" />
                     Your browser does not support the embedded video player.
@@ -236,7 +236,7 @@ function Project() {
             {dataGloveVideos.map((video) => (
               <article key={video.title} className="project-media-card work-video-card">
                 <div className="project-local-video work-local-video">
-                  <video muted loop controls playsInline preload="metadata">
+                  <video autoPlay muted loop controls playsInline preload="auto">
                     <source src={video.srcMp4} type="video/mp4" />
                     Your browser does not support the embedded video player.
                   </video>
@@ -262,9 +262,9 @@ function Project() {
               <article key={video.href} className="project-media-card">
                 <div className="project-embed-frame">
                   <iframe
-                    src={video.embed}
+                    src={`${video.embed}?autoplay=1&mute=1&playsinline=1`}
                     title={video.title}
-                    loading="lazy"
+                    loading="eager"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
@@ -294,7 +294,7 @@ function Project() {
             {printProjects.map((project) => (
               <article key={project.title} className="project-media-card project-print-card">
                 <div className="project-local-video project-print-video">
-                  <video muted loop controls playsInline preload="metadata">
+                  <video autoPlay muted loop controls playsInline preload="auto">
                     <source src={project.srcMp4} type="video/mp4" />
                     <source src={project.srcMov} type="video/quicktime" />
                     Your browser does not support the embedded video player.

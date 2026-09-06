@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SocialLinks from './SocialLinks';
 const navItems = [['Home', 'index.html'], ['Research', 'research.html'], ['Publications', 'publications.html'], ['Experience', 'experience.html'], ['Projects', 'projects.html']];
 function Navigation({ currentPage }: { currentPage: string }) {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,17 @@ function Navigation({ currentPage }: { currentPage: string }) {
       <nav id="primary-nav" className={open ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation">
         {navItems.map(([label, path]) => <a key={path} href={path === 'index.html' ? '/' : `/${path}`} aria-current={currentPage === path ? 'page' : undefined}>{label}</a>)}
       </nav>
-      <a className="header-contact" href="mailto:pranavponni@fuji.waseda.jp">Let’s connect <span>↗</span></a>
+      <details className="header-contact" onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.currentTarget.open = false;
+          event.currentTarget.querySelector('summary')?.focus();
+        }
+      }} onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) event.currentTarget.open = false;
+      }}>
+        <summary>Let’s connect <span>↗</span></summary>
+        <div className="contact-options"><SocialLinks contactOnly /></div>
+      </details>
     </header>
   );
 }
