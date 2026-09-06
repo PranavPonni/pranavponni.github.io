@@ -7,7 +7,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import "../assets/styles/Timeline.scss";
 
 function Timeline() {
   return (

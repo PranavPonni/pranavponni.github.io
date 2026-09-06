@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../assets/styles/Publications.scss";
 
 const MY_NAME = "Pranav Ponnivalavan";
 

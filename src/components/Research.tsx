@@ -1,5 +1,4 @@
 import React from "react";
-import "../assets/styles/Research.scss";
 
 const mediaItems = [
   {
@@ -59,7 +58,7 @@ function Research() {
               <p>Showcase of task-based manipulation where TaSA is applied.</p>
             </div>
             <div className="research-video-frame">
-              <video autoPlay muted loop controls playsInline preload="metadata">
+              <video muted loop controls playsInline preload="metadata">
                 <source src={mediaVideoMp4Src} type="video/mp4" />
                 <source src={mediaVideoMovSrc} type="video/quicktime" />
                 Your browser does not support the embedded video player.

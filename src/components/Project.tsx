@@ -1,5 +1,4 @@
 import React from "react";
-import "../assets/styles/Project.scss";
 
 const robotArmVideos = [
   {
@@ -210,7 +209,7 @@ function Project() {
             {workSeries.map((video) => (
               <article key={`${video.group}-${video.title}`} className="project-media-card work-video-card">
                 <div className="project-local-video work-local-video">
-                  <video autoPlay muted loop controls playsInline preload="metadata">
+                  <video muted loop controls playsInline preload="metadata">
                     <source src={video.srcMp4} type="video/mp4" />
                     <source src={video.srcMov} type="video/quicktime" />
                     Your browser does not support the embedded video player.
@@ -237,7 +236,7 @@ function Project() {
             {dataGloveVideos.map((video) => (
               <article key={video.title} className="project-media-card work-video-card">
                 <div className="project-local-video work-local-video">
-                  <video autoPlay muted loop controls playsInline preload="metadata">
+                  <video muted loop controls playsInline preload="metadata">
                     <source src={video.srcMp4} type="video/mp4" />
                     Your browser does not support the embedded video player.
                   </video>
@@ -295,7 +294,7 @@ function Project() {
             {printProjects.map((project) => (
               <article key={project.title} className="project-media-card project-print-card">
                 <div className="project-local-video project-print-video">
-                  <video autoPlay muted loop controls playsInline preload="metadata">
+                  <video muted loop controls playsInline preload="metadata">
                     <source src={project.srcMp4} type="video/mp4" />
                     <source src={project.srcMov} type="video/quicktime" />
                     Your browser does not support the embedded video player.
