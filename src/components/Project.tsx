@@ -96,36 +96,6 @@ const dataGloveVideos = [
 ];
 
 const workVideos = {
-  fingerVision: [
-    {
-      title: "Factory Pole Cable Manipulation",
-      srcMp4: `${process.env.PUBLIC_URL}/fvcable.mp4`,
-      srcMov: `${process.env.PUBLIC_URL}/fvcable.mov`,
-      description:
-        "Manipulation of cable between poles in factory settings; achieved continuous motion for 30 mins with a success rate of 87%.",
-    },
-    {
-      title: "Bento Plate Oil Spill Cleaning",
-      srcMp4: `${process.env.PUBLIC_URL}/fvspill.mp4`,
-      srcMov: `${process.env.PUBLIC_URL}/fvspill.mov`,
-      description:
-        "Picking up a sponge and cleaning a bento plate that has an oil spill.",
-    },
-    {
-      title: "Cable Manipulation",
-      srcMp4: `${process.env.PUBLIC_URL}/cable_manip.mp4`,
-      srcMov: `${process.env.PUBLIC_URL}/cable_manip.mov`,
-      description:
-        "Manipulation of cable reorientation from Y axis to X axis.",
-    },
-    {
-      title: "Card Manipulation",
-      srcMp4: `${process.env.PUBLIC_URL}/card_manip.mp4`,
-      srcMov: `${process.env.PUBLIC_URL}/card_manip.mov`,
-      description:
-        "Manipulation of picking one card from a pack of three, then placing two on one side and one on the other.",
-    },
-  ],
   oid: {
     srcMp4: `${process.env.PUBLIC_URL}/o-id.mp4`,
     srcMov: `${process.env.PUBLIC_URL}/o-id.mov`,
@@ -152,39 +122,11 @@ function Project() {
 
   const workSeries = [
     {
-      group: "FingerVision",
-      title: workVideos.fingerVision[0].title,
-      srcMp4: workVideos.fingerVision[0].srcMp4,
-      srcMov: workVideos.fingerVision[0].srcMov,
-      description: workVideos.fingerVision[0].description,
-    },
-    {
-      group: "FingerVision",
-      title: workVideos.fingerVision[1].title,
-      srcMp4: workVideos.fingerVision[1].srcMp4,
-      srcMov: workVideos.fingerVision[1].srcMov,
-      description: workVideos.fingerVision[1].description,
-    },
-    {
       group: "O-ID",
       title: "Humanoid Body Render",
       srcMp4: workVideos.oid.srcMp4,
       srcMov: workVideos.oid.srcMov,
       description: workVideos.oid.description,
-    },
-    {
-      group: "FingerVision",
-      title: workVideos.fingerVision[2].title,
-      srcMp4: workVideos.fingerVision[2].srcMp4,
-      srcMov: workVideos.fingerVision[2].srcMov,
-      description: workVideos.fingerVision[2].description,
-    },
-    {
-      group: "FingerVision",
-      title: workVideos.fingerVision[3].title,
-      srcMp4: workVideos.fingerVision[3].srcMp4,
-      srcMov: workVideos.fingerVision[3].srcMov,
-      description: workVideos.fingerVision[3].description,
     },
     {
       group: "TCS",
