@@ -8,7 +8,17 @@ function Main() {
         <div className="hero-identity">
           <h1 id="name">Pranav<br /><span>Ponnivalavan</span><span className="name-period">.</span></h1>
           <p className="hero-description">Exploring how robots<br />sense, learn &amp; interact.</p>
-          <a className="primary-link" href="/research.html">Explore my research <span>↗</span></a>
+          <div className="hero-actions">
+            <a className="primary-link" href="/research.html">Explore my research <span>↗</span></a>
+            <a
+              className="primary-link cv-link"
+              href={`${process.env.PUBLIC_URL}/cv.pdf`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View CV <span>↗</span>
+            </a>
+          </div>
           <SocialLinks />
         </div>
         <aside className="bio-panel">
@@ -17,7 +27,6 @@ function Main() {
             <p>I am a 2nd year M.Eng student at Waseda University, advised by <External href="https://sites.google.com/site/bashifunabashi/home?authuser=0&pli=1">Satoshi Funabashi</External>. I also work at <External href="https://www.fingervision.jp">FingerVision</External>.</p>
             <p>I received my B.Eng in Mechanical Engineering from Waseda University, where I continue to research with <External href="https://ogata-lab.jp/member/ogata.html">Prof. Tetsuya Ogata</External> and <External href="https://scholar.google.co.jp/citations?user=J1lw6cwAAAAJ&hl=en">Prof. Shigeki Sugano</External>. I work with multi-fingered manipulation, tactile sensing and cognitive-science based robotics.</p>
           </div>
-          <div className="bio-tags"><span>Manipulation</span><span>Tactile sensing</span><span>Cognition</span></div>
         </aside>
       </section>
       <section className="life-update" aria-labelledby="life-heading">

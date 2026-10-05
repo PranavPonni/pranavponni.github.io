@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SocialLinks from './SocialLinks';
-const navItems = [['Home', 'index.html'], ['Research', 'research.html'], ['Publications', 'publications.html'], ['Experience', 'experience.html'], ['Projects', 'projects.html']];
+const navItems = [['Home', 'index.html'], ['Research', 'research.html'], ['Publications', 'publications.html'], ['Projects', 'projects.html']];
 function Navigation({ currentPage }: { currentPage: string }) {
   const [open, setOpen] = useState(false);
   return (

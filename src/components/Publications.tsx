@@ -19,9 +19,23 @@ function AuthorList({ authors }: { authors: string }) {
   );
 }
 
-const publicationItems = [
+type Publication = {
+  title: string;
+  authors: string;
+  venue?: string;
+  status?: string;
+  links?: { label: string; href: string }[];
+};
+
+const conferencePapers: Publication[] = [
   {
-    type: "Conference Paper",
+    title:
+      "M-TaSA: Learning Multi-Finger Self-Touch for Sensory Attenuation in Dexterous Manipulation",
+    authors:
+      "Pranav Ponnivalavan, Satoshi Funabashi, Alexander Schmitz, Tetsuya Ogata, Shigeki Sugano",
+    status: "Under Review — IEEE Transactions on Robotics (T-RO)",
+  },
+  {
     title:
       "TaSA: Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation for Improving In-Grasp Manipulation",
     authors:
@@ -33,7 +47,33 @@ const publicationItems = [
     ],
   },
   {
-    type: "Workshop Paper",
+    title:
+      "PACT: Posture-Aligned Co-Design Technique for Hand Configuration and Retargeting in Multi-Finger Imitation Learning",
+    authors:
+      "Koyo Sasazaki, Satoshi Funabashi, Pranav Ponnivalavan, Alexander Schmitz, Tetsuya Ogata, Shigeki Sugano",
+    status:
+      "Under Review — IEEE ICRA 2027 · International Conference on Robotics and Automation",
+  },
+  {
+    title:
+      "A Dual-Surface Tactile Fingertip for Contact-Rich Dexterous Manipulation of a Multi-Fingered Hand",
+    authors:
+      "Steven Oh, Satoshi Funabashi, Hiroki Niimi, Tai Yamada, Kazutaka Omori, Pranav Ponnivalavan, Tetsuya Ogata, Shigeki Sugano",
+    status:
+      "Under Review — IEEE ICRA 2027 · International Conference on Robotics and Automation",
+  },
+  {
+    title:
+      "Depth Conditioning for Bimanual Cable Routing: Gains Are Confined to Phases That Constrain the Depth Axis",
+    authors:
+      "Takeru Suzuki, Satoshi Funabashi, Haoyu Zhao, Pranav Ponnivalavan, Pei-Chun Chien, Shigeki Sugano",
+    status:
+      "Under Review — IEEE ICRA 2027 · International Conference on Robotics and Automation",
+  },
+];
+
+const workshopPapers: Publication[] = [
+  {
     title:
       "Learning Heterogeneous Tactile Representations with Graph Neural Networks for Dexterous Manipulation",
     authors:
@@ -45,7 +85,6 @@ const publicationItems = [
     ],
   },
   {
-    type: "Workshop Paper",
     title:
       "A uSkin Fingertip with a Tactile Fingernail for Contact-Rich Dexterous Manipulation",
     authors:
@@ -57,6 +96,42 @@ const publicationItems = [
     ],
   },
 ];
+
+function PublicationList({
+  items,
+  label,
+}: {
+  items: Publication[];
+  label: string;
+}) {
+  return (
+    <ol className="publications-list" aria-label={label}>
+      {items.map((item) => (
+        <li className="publication-entry" key={item.title}>
+          <h3 className="pub-title">{item.title}</h3>
+          {item.status && <p className="pub-status"><em>{item.status}</em></p>}
+          <p className="pub-authors"><AuthorList authors={item.authors} /></p>
+          {item.venue && <p className="pub-venue">{item.venue}</p>}
+          {item.links && (
+            <div className="pub-links">
+              {item.links.map((link) => (
+                <a
+                  key={link.href}
+                  className="pub-link"
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.label} ↗
+                </a>
+              ))}
+            </div>
+          )}
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 const mediaItems = [
   {
@@ -77,38 +152,29 @@ function Publications() {
       <section className="publications-container">
         <h1 className="publications-heading">Research Publications</h1>
         <p className="publications-summary">
-          Selected publications and review links for recent work in tactile-driven robotic
-          manipulation.
+          Conference and workshop papers in tactile sensing and dexterous robotic manipulation.
         </p>
 
-        <div className="publications-list">
-          {publicationItems.map((item, index) => (
-            <React.Fragment key={item.title}>
-              {index > 0 && <hr className="pub-divider" />}
-              <div className="publication-entry">
-                <span className="pub-type-badge">{item.type}</span>
-                <h2 className="pub-title">{item.title}</h2>
-                <p className="pub-authors"><AuthorList authors={item.authors} /></p>
-                <p className="pub-venue">{item.venue}</p>
-                <div className="pub-links">
-                  {item.links.map((link) => (
-                    <a
-                      key={link.href}
-                      className="pub-link"
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.label} ↗
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </React.Fragment>
-          ))}
-        </div>
+        <section className="publication-section" aria-labelledby="conference-papers-heading">
+          <h2 id="conference-papers-heading" className="publications-subheading">
+            Conference Papers
+          </h2>
+          <PublicationList items={conferencePapers} label="Conference papers" />
+        </section>
 
-        <hr className="pub-divider" />
+        <section className="publication-section" aria-labelledby="workshop-papers-heading">
+          <h2 id="workshop-papers-heading" className="publications-subheading">
+            Workshop Papers
+          </h2>
+          <PublicationList items={workshopPapers} label="Workshop papers" />
+        </section>
+
+        <section className="publication-section" aria-labelledby="paper-reviewing-heading">
+          <h2 id="paper-reviewing-heading" className="publications-subheading">
+            Paper Reviewing
+          </h2>
+          <p className="paper-reviewing-entry">ICRA &amp; IROS 2026</p>
+        </section>
 
         <section className="publications-media" aria-labelledby="publications-media-heading">
           <div className="publications-media-header">

@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { Main, Timeline, Research, Publications, Project, Navigation, Footer } from './components';
+import { Main, Research, Publications, Project, Navigation, Footer } from './components';
 import './index.scss';
 
 const pages: Record<string, { title: string; component: React.ReactNode }> = {
   'index.html': { title: 'Home', component: <Main /> },
   'research.html': { title: 'Research', component: <Research /> },
   'publications.html': { title: 'Publications', component: <Publications /> },
-  'experience.html': { title: 'Experience', component: <Timeline /> },
   'projects.html': { title: 'Projects', component: <Project /> },
 };
 function App() {
@@ -16,7 +15,7 @@ function App() {
   return (
     <div className="aero-site">
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <div className="atmosphere" aria-hidden="true" style={{ backgroundImage: `linear-gradient(#edf7fa80, #edf7fa99), url("${process.env.PUBLIC_URL}/frutiger-wallpaper.jpg")` }} />
+      <div className="atmosphere" aria-hidden="true" />
       <Navigation currentPage={path} />
       <main id="main-content">
         {page ? page.component : <section className="not-found"><h1>Page not found</h1><a href="/">Return home ↗</a></section>}

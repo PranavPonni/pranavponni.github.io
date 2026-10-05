@@ -10,14 +10,18 @@ test('home shows the updated biography and visit with advisor links', () => {
   expect(screen.getByText(/I am a 2nd year M.Eng/)).toBeInTheDocument();
   expect(screen.getByText(/January to April 2027/)).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Justin W Hart' })).toHaveAttribute('href', 'https://justinhart.net');
+  expect(screen.getByRole('link', { name: /View CV/ })).toHaveAttribute('href', '/cv.pdf');
+  expect(screen.getByRole('link', { name: /View CV/ })).toHaveAttribute('target', '_blank');
   expect(screen.queryByText('Expertise')).not.toBeInTheDocument();
+  expect(screen.queryByText('Manipulation')).not.toBeInTheDocument();
+  expect(screen.queryByText('Tactile sensing')).not.toBeInTheDocument();
+  expect(screen.queryByText('Cognition')).not.toBeInTheDocument();
   expect(screen.queryByRole('heading', { name: 'TaSA short demo' })).not.toBeInTheDocument();
 });
 
 test.each([
   ['/research.html', 'Research'],
   ['/publications.html', 'Research Publications'],
-  ['/experience.html', 'Experience'],
   ['/projects.html', 'Projects'],
 ])('direct navigation to %s renders only the requested page', (path, title) => {
   window.history.replaceState({}, '', path);
@@ -36,8 +40,8 @@ test('mobile menu can be opened and closed', () => {
   expect(toggle).toHaveAttribute('aria-expanded', 'false');
 });
 
-test('unknown pages offer a route home', () => {
-  window.history.replaceState({}, '', '/missing.html');
+test.each(['/experience.html', '/missing.html'])('removed or unknown page %s offers a route home', (path) => {
+  window.history.replaceState({}, '', path);
   render(<App />);
   expect(screen.getByRole('heading', { name: 'Page not found' })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /Return home/ })).toHaveAttribute('href', '/');
