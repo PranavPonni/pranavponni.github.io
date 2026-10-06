@@ -3,7 +3,7 @@ import React from "react";
 const mediaItems = [
   {
     title: "Main paper",
-    href: "https://arxiv.org/abs/2602.05468",
+    href: "https://ieeexplore.ieee.org/document/11696756",
   },
   {
     title: "Project page",
@@ -20,7 +20,7 @@ function Research() {
     <div className="container" id="research">
       <section className="research-container">
         <div className="research-hero">
-          <h1 className="research-section-heading">Research</h1>
+          <h1 className="page-title-visually-hidden">Research</h1>
 
           <section className="research-current-work" aria-labelledby="mtasa-title">
             <div className="research-current-meta">
@@ -51,6 +51,12 @@ function Research() {
           </section>
 
           <section className="research-project" aria-labelledby="tasa-title">
+            <div className="research-project-meta">
+              <span className="research-kicker">Conference paper</span>
+              <span className="research-conference-status">
+                IEEE International Conference on Robotics and Automation (IEEE ICRA 2026)
+              </span>
+            </div>
             <h2 id="tasa-title" className="research-title">
               TaSA: Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation for
               Improving In-Grasp Manipulation

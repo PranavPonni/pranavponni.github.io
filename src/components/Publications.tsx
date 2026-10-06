@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const MY_NAME = "Pranav Ponnivalavan";
+const TASA_IEEE_XPLORE_URL = "https://ieeexplore.ieee.org/document/11696756";
 
 function AuthorList({ authors }: { authors: string }) {
   return (
@@ -40,11 +41,8 @@ const conferencePapers: Publication[] = [
       "TaSA: Two-Phased Deep Predictive Learning of Tactile Sensory Attenuation for Improving In-Grasp Manipulation",
     authors:
       "Pranav Ponnivalavan, Satoshi Funabashi, Alexander Schmitz, Tetsuya Ogata, Shigeki Sugano",
-    venue: "IEEE ICRA 2026 · International Conference on Robotics and Automation",
-    links: [
-      { label: "arXiv", href: "https://arxiv.org/abs/2602.05468" },
-      { label: "PDF", href: "https://arxiv.org/pdf/2602.05468" },
-    ],
+    venue: "IEEE International Conference on Robotics and Automation (IEEE ICRA 2026)",
+    links: [{ label: "IEEE Xplore", href: TASA_IEEE_XPLORE_URL }],
   },
   {
     title:
@@ -171,7 +169,7 @@ function Publications() {
   return (
     <div className="container" id="publications">
       <section className="publications-container">
-        <h1 className="publications-heading">Research Publications</h1>
+        <h1 className="page-title-visually-hidden">Research Publications</h1>
         <p className="publications-summary">
           Conference and workshop papers in tactile sensing and dexterous robotic manipulation.
         </p>

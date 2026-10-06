@@ -139,7 +139,7 @@ function Project() {
 
   return (
     <div className="projects-container" id="projects">
-      <h1>Projects</h1>
+      <h1 className="page-title-visually-hidden">Projects</h1>
 
       <div className="projects-grid">
         <section className="project">

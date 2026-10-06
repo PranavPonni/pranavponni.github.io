@@ -7,6 +7,7 @@ beforeEach(() => window.history.replaceState({}, '', '/'));
 test('home shows the updated biography and visit with advisor links', () => {
   render(<App />);
   expect(screen.getByRole('heading', { name: /Pranav Ponnivalavan/ })).toBeInTheDocument();
+  expect(screen.getByText('Exploring how robots sense, learn & interact.')).toBeInTheDocument();
   expect(screen.getByText('- seeking PhD opportunities :)')).toBeInTheDocument();
   expect(screen.getByText(/I am a 2nd year M.Eng/)).toBeInTheDocument();
   expect(screen.getByText(/January to April 2027/)).toBeInTheDocument();
@@ -39,9 +40,24 @@ test('research shows the current paper review status', () => {
   window.history.replaceState({}, '', '/research.html');
   render(<App />);
   expect(screen.getByText('(Under review at IEEE T-RO)')).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Main paper' })).toBeInTheDocument();
+  expect(screen.getByText('Conference paper')).toBeInTheDocument();
+  expect(screen.getByText('IEEE International Conference on Robotics and Automation (IEEE ICRA 2026)')).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Main paper' })).toHaveAttribute(
+    'href',
+    'https://ieeexplore.ieee.org/document/11696756',
+  );
   expect(screen.getByRole('link', { name: 'Project page' })).toBeInTheDocument();
   expect(screen.queryByText('TaSA paper on arXiv.')).not.toBeInTheDocument();
+});
+
+test('publications links TaSA to its IEEE Xplore paper', () => {
+  window.history.replaceState({}, '', '/publications.html');
+  render(<App />);
+  expect(screen.getByRole('link', { name: /IEEE Xplore/ })).toHaveAttribute(
+    'href',
+    'https://ieeexplore.ieee.org/document/11696756',
+  );
+  expect(screen.queryByRole('link', { name: /arXiv/ })).not.toBeInTheDocument();
 });
 
 test('mobile menu can be opened and closed', () => {

@@ -20,7 +20,7 @@ function Main() {
               aria-hidden="true"
             />
           </h1>
-          <p className="hero-description">Exploring how robots<br />sense, learn &amp; interact.</p>
+          <p className="hero-description">Exploring how robots sense, learn &amp; interact.</p>
           <p className="hero-opportunity">- seeking PhD opportunities :)</p>
           <div className="hero-actions">
             <a
