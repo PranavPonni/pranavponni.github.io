@@ -7,11 +7,15 @@ beforeEach(() => window.history.replaceState({}, '', '/'));
 test('home shows the updated biography and visit with advisor links', () => {
   render(<App />);
   expect(screen.getByRole('heading', { name: /Pranav Ponnivalavan/ })).toBeInTheDocument();
+  expect(screen.getByText('- seeking PhD opportunities :)')).toBeInTheDocument();
   expect(screen.getByText(/I am a 2nd year M.Eng/)).toBeInTheDocument();
   expect(screen.getByText(/January to April 2027/)).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Justin W Hart' })).toHaveAttribute('href', 'https://justinhart.net');
   expect(screen.getByRole('link', { name: /View CV/ })).toHaveAttribute('href', '/cv.pdf');
   expect(screen.getByRole('link', { name: /View CV/ })).toHaveAttribute('target', '_blank');
+  expect(screen.queryByRole('link', { name: /Explore my research/ })).not.toBeInTheDocument();
+  expect(screen.queryByLabelText('Pranav Ponnivalavan home')).not.toBeInTheDocument();
+  expect(screen.getByText(/Last Updated: Oct 2026/)).toBeInTheDocument();
   expect(screen.queryByText('Expertise')).not.toBeInTheDocument();
   expect(screen.queryByText('Manipulation')).not.toBeInTheDocument();
   expect(screen.queryByText('Tactile sensing')).not.toBeInTheDocument();
@@ -29,6 +33,15 @@ test.each([
   expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument();
   expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
   expect(screen.queryByText(/I am a 2nd year M.Eng/)).not.toBeInTheDocument();
+});
+
+test('research shows the current paper review status', () => {
+  window.history.replaceState({}, '', '/research.html');
+  render(<App />);
+  expect(screen.getByText('(Under review at IEEE T-RO)')).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Main paper' })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Project page' })).toBeInTheDocument();
+  expect(screen.queryByText('TaSA paper on arXiv.')).not.toBeInTheDocument();
 });
 
 test('mobile menu can be opened and closed', () => {

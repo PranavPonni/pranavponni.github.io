@@ -226,7 +226,7 @@ function Project() {
           </div>
         </section>
 
-        <section className="project">
+        <section className="project" id="three-d-prints">
           <div className="project-header">
             <h2>3D Prints</h2>
             <p>Personal design-and-print builds focused on character, motion, and functional mechanical form.</p>

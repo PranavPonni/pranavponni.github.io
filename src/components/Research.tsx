@@ -3,12 +3,10 @@ import React from "react";
 const mediaItems = [
   {
     title: "Main paper",
-    description: "TaSA paper on arXiv.",
     href: "https://arxiv.org/abs/2602.05468",
   },
   {
     title: "Project page",
-    description: "Project page with additional context for the self-touch manipulation work.",
     href: "https://sites.google.com/site/bashifunabashi/mhand-project/self-touch?authuser=0",
   },
 ];
@@ -25,7 +23,10 @@ function Research() {
           <h1 className="research-section-heading">Research</h1>
 
           <section className="research-current-work" aria-labelledby="mtasa-title">
-            <span className="research-kicker">Current work</span>
+            <div className="research-current-meta">
+              <span className="research-kicker">Current work</span>
+              <span className="research-review-status">(Under review at IEEE T-RO)</span>
+            </div>
             <h2 id="mtasa-title">
               M-TaSA: Learning Multi-Finger Self-Touch for Sensory Attenuation in Dexterous
               Manipulation
@@ -65,7 +66,6 @@ function Research() {
                   rel="noreferrer"
                 >
                   <h3>{item.title}</h3>
-                  <p>{item.description}</p>
                 </a>
               ))}
             </div>

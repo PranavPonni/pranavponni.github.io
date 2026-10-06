@@ -6,10 +6,23 @@ function Main() {
     <div className="home-page">
       <section className="hero" aria-labelledby="name">
         <div className="hero-identity">
-          <h1 id="name">Pranav<br /><span>Ponnivalavan</span><span className="name-period">.</span></h1>
+          <h1 id="name" className="hero-name" aria-label="Pranav Ponnivalavan">
+            <img
+              className="hero-name-art hero-name-art-first"
+              src={`${process.env.PUBLIC_URL}/name-pranav.svg`}
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              className="hero-name-art hero-name-art-last"
+              src={`${process.env.PUBLIC_URL}/name-ponnivalavan.svg`}
+              alt=""
+              aria-hidden="true"
+            />
+          </h1>
           <p className="hero-description">Exploring how robots<br />sense, learn &amp; interact.</p>
+          <p className="hero-opportunity">- seeking PhD opportunities :)</p>
           <div className="hero-actions">
-            <a className="primary-link" href="/research.html">Explore my research <span>↗</span></a>
             <a
               className="primary-link cv-link"
               href={`${process.env.PUBLIC_URL}/cv.pdf`}
