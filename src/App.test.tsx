@@ -40,6 +40,19 @@ test('mobile menu can be opened and closed', () => {
   expect(toggle).toHaveAttribute('aria-expanded', 'false');
 });
 
+test('publication media dialog closes with Escape and restores focus', () => {
+  window.history.replaceState({}, '', '/publications.html');
+  render(<App />);
+
+  const mediaButton = screen.getAllByRole('button', { name: /Open larger image/ })[0];
+  fireEvent.click(mediaButton);
+  expect(screen.getByRole('dialog', { name: 'Expanded media image' })).toBeInTheDocument();
+
+  fireEvent.keyDown(document, { key: 'Escape' });
+  expect(screen.queryByRole('dialog', { name: 'Expanded media image' })).not.toBeInTheDocument();
+  expect(mediaButton).toHaveFocus();
+});
+
 test.each(['/experience.html', '/missing.html'])('removed or unknown page %s offers a route home', (path) => {
   window.history.replaceState({}, '', path);
   render(<App />);

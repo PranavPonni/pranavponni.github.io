@@ -158,7 +158,7 @@ function Project() {
                   </video>
                 </div>
                 <span className="work-video-group">{video.group}</span>
-                <h4>{video.title}</h4>
+                <h3>{video.title}</h3>
                 <p>{video.description}</p>
               </article>
             ))}
@@ -183,7 +183,7 @@ function Project() {
                     Your browser does not support the embedded video player.
                   </video>
                 </div>
-                <h4>{video.title}</h4>
+                <h3>{video.title}</h3>
                 <p>{video.description}</p>
               </article>
             ))}

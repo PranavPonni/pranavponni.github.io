@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const MY_NAME = "Pranav Ponnivalavan";
 
@@ -146,6 +146,27 @@ const mediaItems = [
 
 function Publications() {
   const [selectedMedia, setSelectedMedia] = useState<(typeof mediaItems)[number] | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const mediaTriggerRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (!selectedMedia) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedMedia(null);
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", closeOnEscape);
+    closeButtonRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+      mediaTriggerRef.current?.focus();
+    };
+  }, [selectedMedia]);
 
   return (
     <div className="container" id="publications">
@@ -201,7 +222,10 @@ function Publications() {
                 <button
                   className="publications-media-button"
                   type="button"
-                  onClick={() => setSelectedMedia(item)}
+                  onClick={(event) => {
+                    mediaTriggerRef.current = event.currentTarget;
+                    setSelectedMedia(item);
+                  }}
                   aria-label={`Open larger image: ${item.alt}`}
                 >
                   <img src={item.src} alt={item.alt} loading="lazy" />
@@ -218,8 +242,15 @@ function Publications() {
             aria-modal="true"
             aria-label="Expanded media image"
             onClick={() => setSelectedMedia(null)}
+            onKeyDown={(event) => {
+              if (event.key === "Tab") {
+                event.preventDefault();
+                closeButtonRef.current?.focus();
+              }
+            }}
           >
             <button
+              ref={closeButtonRef}
               className="publications-lightbox-close"
               type="button"
               onClick={() => setSelectedMedia(null)}
