@@ -75,7 +75,7 @@ const workshopPapers: Publication[] = [
     title:
       "Learning Heterogeneous Tactile Representations with Graph Neural Networks for Dexterous Manipulation",
     authors:
-      "Tai Yamada, Satoshi Funabashi, Steven Oh, Pranav Ponnivalavan, Kazutaka Omori, Tetsuya Ogata, Shigeki SUGANO",
+      "Tai Yamada, Satoshi Funabashi, Steven Oh, Pranav Ponnivalavan, Kazutaka Omori, Tetsuya Ogata, Shigeki Sugano",
     venue: "ViTac Workshop · IEEE ICRA 2026",
     links: [
       { label: "OpenReview", href: "https://openreview.net/forum?id=GCq58uWqZ7" },
@@ -86,7 +86,7 @@ const workshopPapers: Publication[] = [
     title:
       "A uSkin Fingertip with a Tactile Fingernail for Contact-Rich Dexterous Manipulation",
     authors:
-      "Steven Oh, Satoshi Funabashi, Hiroki Niimi, Tai Yamada, Kazutaka Omori, Pranav Ponnivalavan, Tetsuya Ogata, Shigeki SUGANO",
+      "Steven Oh, Satoshi Funabashi, Hiroki Niimi, Tai Yamada, Kazutaka Omori, Pranav Ponnivalavan, Tetsuya Ogata, Shigeki Sugano",
     venue: "IEEE ICRA 2026 Workshop Dex Submission",
     links: [
       { label: "OpenReview", href: "https://openreview.net/forum?id=POuDNj8jbA" },
@@ -108,8 +108,8 @@ function PublicationList({
         <li className="publication-entry" key={item.title}>
           <h3 className="pub-title">{item.title}</h3>
           {item.status && <p className="pub-status"><em>{item.status}</em></p>}
+          {item.venue && <p className="pub-venue"><em>{item.venue}</em></p>}
           <p className="pub-authors"><AuthorList authors={item.authors} /></p>
-          {item.venue && <p className="pub-venue">{item.venue}</p>}
           {item.links && (
             <div className="pub-links">
               {item.links.map((link) => (

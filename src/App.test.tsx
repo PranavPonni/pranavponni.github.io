@@ -60,6 +60,23 @@ test('publications links TaSA to its IEEE Xplore paper', () => {
   expect(screen.queryByRole('link', { name: /arXiv/ })).not.toBeInTheDocument();
 });
 
+test('published venues appear before authors for conference and workshop papers', () => {
+  window.history.replaceState({}, '', '/publications.html');
+  const { container } = render(<App />);
+
+  const venueEntries = Array.from(container.querySelectorAll('.publication-entry:has(.pub-venue)'));
+  expect(venueEntries).toHaveLength(3);
+
+  venueEntries.forEach((entry) => {
+    const venue = entry.querySelector('.pub-venue');
+    const authors = entry.querySelector('.pub-authors');
+
+    expect(venue).not.toBeNull();
+    expect(authors).not.toBeNull();
+    expect(venue!.compareDocumentPosition(authors!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+});
+
 test('mobile menu can be opened and closed', () => {
   render(<App />);
   const toggle = screen.getByRole('button', { name: 'Menu +' });

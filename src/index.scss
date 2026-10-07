@@ -285,6 +285,7 @@ main {
 .hero-name-art {
   display: block;
   height: auto;
+  margin-left: -0.7%;
 }
 
 .hero-name-art-first {
@@ -349,6 +350,7 @@ main {
   display: flex;
   min-width: 0;
   flex-direction: column;
+  justify-content: center;
   padding: 40px;
   border: 0;
   border-radius: 0;
@@ -360,7 +362,7 @@ main {
 .bio-top {
   position: relative;
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 170px minmax(0, 1fr);
   align-items: end;
   gap: 20px;
   padding-bottom: 28px;
@@ -368,8 +370,8 @@ main {
 }
 
 .portrait-wrap {
-  width: 150px;
-  height: 174px;
+  width: 170px;
+  height: 198px;
   padding: 0;
   overflow: hidden;
   border: 2px solid var(--line);
@@ -840,27 +842,21 @@ iframe {
   letter-spacing: -0.035em;
 }
 
-.pub-authors,
-.pub-venue {
+.pub-authors {
+  margin-bottom: 9px;
   color: var(--muted);
   font-size: 15px;
 }
 
-.pub-authors {
-  margin-bottom: 9px;
-}
-
+.pub-status,
 .pub-venue {
-  margin-bottom: 0;
-}
-
-.pub-status {
   margin: 0 0 10px;
   color: var(--signal-dark);
   font-size: 14px;
 }
 
-.pub-status em {
+.pub-status em,
+.pub-venue em {
   font-weight: 375;
 }
 
@@ -1158,6 +1154,11 @@ iframe {
   transition: color 140ms ease, background-color 140ms ease, transform 140ms ease;
 }
 
+.hero-identity > .social-links a {
+  width: 52px;
+  min-width: 52px;
+}
+
 .contact-options .social-links {
   flex-wrap: nowrap;
   margin: 0;
@@ -1255,12 +1256,12 @@ iframe {
   }
 
   .bio-top {
-    grid-template-columns: 130px minmax(0, 1fr);
+    grid-template-columns: 145px minmax(0, 1fr);
   }
 
   .portrait-wrap {
-    width: 130px;
-    height: 158px;
+    width: 145px;
+    height: 170px;
   }
 
   .update-route {
@@ -1344,12 +1345,12 @@ iframe {
   }
 
   .bio-top {
-    grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-columns: 170px minmax(0, 1fr);
   }
 
   .portrait-wrap {
-    width: 150px;
-    height: 174px;
+    width: 170px;
+    height: 198px;
   }
 
   #research,
@@ -1455,12 +1456,12 @@ iframe {
   }
 
   .bio-top {
-    grid-template-columns: 130px minmax(0, 1fr);
+    grid-template-columns: 145px minmax(0, 1fr);
   }
 
   .portrait-wrap {
-    width: 130px;
-    height: 154px;
+    width: 145px;
+    height: 170px;
   }
 
   .life-update {
@@ -1566,8 +1567,8 @@ iframe {
   }
 
   .portrait-wrap {
-    width: 152px;
-    height: 178px;
+    width: 170px;
+    height: 198px;
   }
 
   .social-links {
