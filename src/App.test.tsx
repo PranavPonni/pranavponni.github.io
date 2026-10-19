@@ -57,7 +57,15 @@ test('publications links TaSA to its IEEE Xplore paper', () => {
     'href',
     'https://ieeexplore.ieee.org/document/11696756',
   );
-  expect(screen.queryByRole('link', { name: /arXiv/ })).not.toBeInTheDocument();
+});
+
+test('publications links PACT Hand to its arXiv paper', () => {
+  window.history.replaceState({}, '', '/publications.html');
+  render(<App />);
+  expect(screen.getByRole('link', { name: /arXiv/ })).toHaveAttribute(
+    'href',
+    'https://arxiv.org/pdf/2610.18443',
+  );
 });
 
 test('published venues appear before authors for conference and workshop papers', () => {

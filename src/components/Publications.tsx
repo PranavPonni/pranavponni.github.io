@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 const MY_NAME = "Pranav Ponnivalavan";
 const TASA_IEEE_XPLORE_URL = "https://ieeexplore.ieee.org/document/11696756";
+const PACT_HAND_ARXIV_URL = "https://arxiv.org/pdf/2610.18443";
 
 function AuthorList({ authors }: { authors: string }) {
   return (
@@ -51,6 +52,7 @@ const conferencePapers: Publication[] = [
       "Koyo Sasazaki, Satoshi Funabashi, Pranav Ponnivalavan, Alexander Schmitz, Tetsuya Ogata, Shigeki Sugano",
     status:
       "Under Review — IEEE ICRA 2027 · International Conference on Robotics and Automation",
+    links: [{ label: "arXiv", href: PACT_HAND_ARXIV_URL }],
   },
   {
     title:
